@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 268" width="640" height="268" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Seconds for one module call on one host: all facts, minimal facts, ping (median of three runs)</title>
+  <desc id="d">all facts: 2.92 s. min facts: 1.98 s. ping: 1.43 s. all facts, pipelined: 2.35 s. min facts, pipelined: 1.52 s. ping, pipelined: 1.01 s</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Seconds for one module call on one host: all facts, minimal facts, ping (median of three runs)</text>
+  <text x="172" y="65" text-anchor="end" font-size="14">all facts</text>
+  <rect x="188" y="51" width="346" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="188" y="51" width="346.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">2.92 s</text>
+  <text x="172" y="99" text-anchor="end" font-size="14">min facts</text>
+  <rect x="188" y="85" width="346" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="188" y="85" width="234.6" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">1.98 s</text>
+  <text x="172" y="133" text-anchor="end" font-size="14">ping</text>
+  <rect x="188" y="119" width="346" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="188" y="119" width="169.4" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">1.43 s</text>
+  <text x="172" y="167" text-anchor="end" font-size="14">all facts, pipelined</text>
+  <rect x="188" y="153" width="346" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="188" y="153" width="278.5" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">2.35 s</text>
+  <text x="172" y="201" text-anchor="end" font-size="14">min facts, pipelined</text>
+  <rect x="188" y="187" width="346" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="188" y="187" width="180.1" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="202" font-size="14">1.52 s</text>
+  <text x="172" y="235" text-anchor="end" font-size="14">ping, pipelined</text>
+  <rect x="188" y="221" width="346" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="188" y="221" width="119.7" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="236" font-size="14">1.01 s</text>
+</svg>

@@ -1,0 +1,29 @@
+---
+- name: Install nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+    update_cache: true
+    cache_valid_time: 3600
+
+- name: Write the site config
+  ansible.builtin.template:
+    src: site.conf.j2
+    dest: /etc/nginx/conf.d/webserver.conf
+    owner: root
+    group: root
+    mode: "0644"
+  notify: Reload nginx
+
+- name: Write the home page
+  ansible.builtin.copy:
+    content: "{{ webserver_message }}\n"
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: "0644"
+
+- name: Make sure nginx is running
+  ansible.builtin.service:
+    name: nginx
+    state: started

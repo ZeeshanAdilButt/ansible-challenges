@@ -1,0 +1,13 @@
+---
+# TODO: write the tasks of the web role. The brief (capstone-stack/README.md, "What each role must do") lists them.
+# Give every task a name that starts with a capital letter. Use full module names, for example ansible.builtin.apt.
+#
+# 1. Install nginx (ansible.builtin.apt).
+# 2. Write /etc/nginx/nginx.conf from templates/nginx.conf.j2 (you write the template too): owner root, mode "0644".
+#    Ask nginx to test the file before it is used: the template module has an option called validate.
+#    The command is: nginx -t -c %s
+#    A change must notify the handler "Reload nginx".
+# 3. Make sure the service nginx is running and starts at boot (ansible.builtin.service).
+# 4. Run the handlers now (ansible.builtin.meta: flush_handlers).
+# 5. Check that http://127.0.0.1:<web_port>/health answers 200 (ansible.builtin.uri). Up to 8 tries, 1 second apart.
+#    That one request goes through the proxy, the app and the database.

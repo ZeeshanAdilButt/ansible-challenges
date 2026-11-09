@@ -1,0 +1,7 @@
+# Written by Ansible for {{ inventory_hostname }}. Do not edit by hand.
+server {
+    listen {{ site_port }};
+    root /var/www/site;
+    index index.html;
+    server_name {{ inventory_hostname }};
+}

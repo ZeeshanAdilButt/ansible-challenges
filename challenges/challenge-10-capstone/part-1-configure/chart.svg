@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 302" width="640" height="302" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Seconds each pipeline stage took on a new fleet</title>
+  <desc id="d">deps: 0.9 s. lint: 38.9 s. syntax: 4.7 s. apply: 34.9 s. idempotence: 15.5 s. check: 16.9 s. health: 0.3 s</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Seconds each pipeline stage took on a new fleet</text>
+  <text x="100" y="65" text-anchor="end" font-size="14">deps</text>
+  <rect x="116" y="51" width="418" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="116" y="51" width="9.7" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">0.9 s</text>
+  <text x="100" y="99" text-anchor="end" font-size="14">lint</text>
+  <rect x="116" y="85" width="418" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="116" y="85" width="418.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">38.9 s</text>
+  <text x="100" y="133" text-anchor="end" font-size="14">syntax</text>
+  <rect x="116" y="119" width="418" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="116" y="119" width="50.5" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">4.7 s</text>
+  <text x="100" y="167" text-anchor="end" font-size="14">apply</text>
+  <rect x="116" y="153" width="418" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="116" y="153" width="375.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">34.9 s</text>
+  <text x="100" y="201" text-anchor="end" font-size="14">idempotence</text>
+  <rect x="116" y="187" width="418" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="116" y="187" width="166.6" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="202" font-size="14">15.5 s</text>
+  <text x="100" y="235" text-anchor="end" font-size="14">check</text>
+  <rect x="116" y="221" width="418" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="116" y="221" width="181.6" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="236" font-size="14">16.9 s</text>
+  <text x="100" y="269" text-anchor="end" font-size="14">health</text>
+  <rect x="116" y="255" width="418" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="116" y="255" width="3.2" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="270" font-size="14">0.3 s</text>
+</svg>

@@ -1,0 +1,38 @@
+---
+# Roll back: put the copy made by the push back, test it, restart sshd, check a new login.
+# It only works on hosts that Ansible can still reach. A host you are locked out of needs your second way in.
+- name: Roll sshd_config back from the copy
+  hosts: all
+  gather_facts: false
+  become: true
+  serial: 1
+  tasks:
+    - name: Is there a copy to go back to
+      ansible.builtin.stat:
+        path: /etc/ssh/sshd_config.before-push
+      register: copy_made
+
+    - name: Stop if there is no copy
+      ansible.builtin.assert:
+        that: copy_made.stat.exists
+        fail_msg: "No /etc/ssh/sshd_config.before-push on {{ inventory_hostname }}"
+
+    - name: Put the copy back
+      ansible.builtin.copy:
+        src: /etc/ssh/sshd_config.before-push
+        dest: /etc/ssh/sshd_config
+        remote_src: true
+        mode: preserve
+        validate: sshd -t -f %s
+
+    - name: Restart sshd
+      ansible.builtin.service:
+        name: ssh
+        state: restarted
+
+    - name: Reset the SSH connection
+      ansible.builtin.meta: reset_connection
+
+    - name: Check that a new login works
+      ansible.builtin.wait_for_connection:
+        timeout: 10

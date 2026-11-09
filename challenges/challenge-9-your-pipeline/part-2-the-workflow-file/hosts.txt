@@ -1,0 +1,5 @@
+# One host per line: the name, then the group. Lines that start with # are comments.
+# The dynamic inventory script reads this file and gives Ansible the hosts.
+web1 web
+web2 web
+db1 db

@@ -1,0 +1,6 @@
+---
+# Release 2: one setting changes on each kind of host.
+capstone_release: "2"
+web_worker_connections: 2048
+app_log_level: debug
+db_maxmemory_mb: 96

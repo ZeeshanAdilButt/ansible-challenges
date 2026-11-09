@@ -1,0 +1,19 @@
+---
+# Write one config file on every host from one template.
+# You do not change this file. You change app.conf.j2.
+
+- name: Render the app config on every host
+  hosts: all
+  become: true
+  tasks:
+    - name: Make the config folder
+      ansible.builtin.file:
+        path: /etc/myapp
+        state: directory
+        mode: "0755"
+
+    - name: Write the app config from the template
+      ansible.builtin.template:
+        src: app.conf.j2
+        dest: /etc/myapp/app.conf
+        mode: "0644"

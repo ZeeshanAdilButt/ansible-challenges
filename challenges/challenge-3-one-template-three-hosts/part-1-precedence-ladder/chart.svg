@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 676" width="640" height="676" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Rank of the place that wins on web2 as each place is added (18 is the strongest)</title>
+  <desc id="d">1 role-defaults: 1. 2 inventory-group-var: 2. 3 inventory-group_vars-all: 3. 4 playbook-group_vars-all: 4. 5 inventory-group_vars-web: 5. 6 playbook-group_vars-web: 6. 7 inventory-host-var: 7. 8 inventory-host_vars-web2: 8. 9 playbook-host_vars-web2: 9. 10 play-vars: 10. 11 play-vars_files: 11. 12 role-vars: 12. 13 block-vars: 13. 14 task-vars: 14. 15 include_vars: 15. 16 set_fact: 16. 17 role-params: 17. 18 extra-vars: 18</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Rank of the place that wins on web2 as each place is added (18 is the strongest)</text>
+  <text x="220" y="65" text-anchor="end" font-size="14">1 role-defaults</text>
+  <rect x="236" y="51" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="51" width="16.6" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">1</text>
+  <text x="220" y="99" text-anchor="end" font-size="14">2 inventory-group-var</text>
+  <rect x="236" y="85" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="85" width="33.1" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">2</text>
+  <text x="220" y="133" text-anchor="end" font-size="14">3 inventory-group_vars-all</text>
+  <rect x="236" y="119" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="119" width="49.7" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">3</text>
+  <text x="220" y="167" text-anchor="end" font-size="14">4 playbook-group_vars-all</text>
+  <rect x="236" y="153" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="153" width="66.2" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">4</text>
+  <text x="220" y="201" text-anchor="end" font-size="14">5 inventory-group_vars-web</text>
+  <rect x="236" y="187" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="187" width="82.8" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="202" font-size="14">5</text>
+  <text x="220" y="235" text-anchor="end" font-size="14">6 playbook-group_vars-web</text>
+  <rect x="236" y="221" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="221" width="99.3" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="236" font-size="14">6</text>
+  <text x="220" y="269" text-anchor="end" font-size="14">7 inventory-host-var</text>
+  <rect x="236" y="255" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="255" width="115.9" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="270" font-size="14">7</text>
+  <text x="220" y="303" text-anchor="end" font-size="14">8 inventory-host_vars-web2</text>
+  <rect x="236" y="289" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="289" width="132.4" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="304" font-size="14">8</text>
+  <text x="220" y="337" text-anchor="end" font-size="14">9 playbook-host_vars-web2</text>
+  <rect x="236" y="323" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="323" width="149.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="338" font-size="14">9</text>
+  <text x="220" y="371" text-anchor="end" font-size="14">10 play-vars</text>
+  <rect x="236" y="357" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="357" width="165.6" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="372" font-size="14">10</text>
+  <text x="220" y="405" text-anchor="end" font-size="14">11 play-vars_files</text>
+  <rect x="236" y="391" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="391" width="182.1" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="406" font-size="14">11</text>
+  <text x="220" y="439" text-anchor="end" font-size="14">12 role-vars</text>
+  <rect x="236" y="425" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="425" width="198.7" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="440" font-size="14">12</text>
+  <text x="220" y="473" text-anchor="end" font-size="14">13 block-vars</text>
+  <rect x="236" y="459" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="459" width="215.2" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="474" font-size="14">13</text>
+  <text x="220" y="507" text-anchor="end" font-size="14">14 task-vars</text>
+  <rect x="236" y="493" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="493" width="231.8" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="508" font-size="14">14</text>
+  <text x="220" y="541" text-anchor="end" font-size="14">15 include_vars</text>
+  <rect x="236" y="527" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="527" width="248.3" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="542" font-size="14">15</text>
+  <text x="220" y="575" text-anchor="end" font-size="14">16 set_fact</text>
+  <rect x="236" y="561" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="561" width="264.9" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="576" font-size="14">16</text>
+  <text x="220" y="609" text-anchor="end" font-size="14">17 role-params</text>
+  <rect x="236" y="595" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="595" width="281.4" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="610" font-size="14">17</text>
+  <text x="220" y="643" text-anchor="end" font-size="14">18 extra-vars</text>
+  <rect x="236" y="629" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="629" width="298.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="644" font-size="14">18</text>
+</svg>

@@ -1,0 +1,84 @@
+# The practice fleet. Project name: anp (set ANP_PROJECT to run a second fleet next to it).
+# Start it with: node toolkit/fleet.mjs up
+# Everything here carries the label anp.fleet=1.
+name: ${ANP_PROJECT:-anp}
+
+x-target: &target
+  image: anp-target:1
+  pull_policy: never
+  init: true # PID 1 is a reaper (tini), so "service ssh reload" and "restart" work
+  mem_limit: 256m
+  pids_limit: 256
+  volumes:
+    - ../keys:/keys:ro
+  networks: [fleet]
+  labels:
+    anp.fleet: "1"
+    anp.role: target
+
+services:
+  control:
+    image: anp-control:1
+    pull_policy: never
+    build: ./control
+    container_name: ${ANP_PROJECT:-anp}-control
+    hostname: control
+    init: true
+    working_dir: /work
+    mem_limit: 1g
+    pids_limit: 512
+    security_opt: ["no-new-privileges:true"]
+    environment:
+      ANSIBLE_CONFIG: /work/ansible.cfg
+      HOME: /home/learner
+    # Run as the host user on Linux (the toolkit sets ANP_UID), as user 1000 everywhere else.
+    user: "${ANP_UID:-1000}:${ANP_GID:-1000}"
+    volumes:
+      - ..:/work
+      - ../keys:/keys:ro
+    networks: [fleet]
+    labels:
+      anp.fleet: "1"
+      anp.role: control
+
+  web1:
+    <<: *target
+    build: ./target
+    container_name: ${ANP_PROJECT:-anp}-web1
+    hostname: web1
+  web2:
+    <<: *target
+    container_name: ${ANP_PROJECT:-anp}-web2
+    hostname: web2
+  db1:
+    <<: *target
+    container_name: ${ANP_PROJECT:-anp}-db1
+    hostname: db1
+
+  # Profile "rollout": four more web hosts, used from challenge 8.
+  web3:
+    <<: *target
+    profiles: [rollout]
+    container_name: ${ANP_PROJECT:-anp}-web3
+    hostname: web3
+  web4:
+    <<: *target
+    profiles: [rollout]
+    container_name: ${ANP_PROJECT:-anp}-web4
+    hostname: web4
+  web5:
+    <<: *target
+    profiles: [rollout]
+    container_name: ${ANP_PROJECT:-anp}-web5
+    hostname: web5
+  web6:
+    <<: *target
+    profiles: [rollout]
+    container_name: ${ANP_PROJECT:-anp}-web6
+    hostname: web6
+
+networks:
+  fleet:
+    name: ${ANP_PROJECT:-anp}-fleet
+    labels:
+      anp.fleet: "1"

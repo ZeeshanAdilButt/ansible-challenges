@@ -1,0 +1,19 @@
+---
+# The same change, with the batch size taken from a variable called plan.
+# run.mjs tries several plans, for example:  -e '{"plan": [1, 2]}'   or   -e '{"plan": "30%"}'
+# An empty list means "no serial": every host in one batch.
+- name: Roll out app config version 2, plan from a variable
+  hosts: web
+  gather_facts: false
+  serial: "{{ plan }}"
+  tasks:
+    - name: Write the new app config
+      ansible.builtin.copy:
+        dest: /etc/anp-app.conf
+        content: "version=2\n"
+        mode: "0644"
+      become: true
+
+    - name: Restart the app (simulated, it takes two seconds)
+      ansible.builtin.command: sleep 2
+      changed_when: false

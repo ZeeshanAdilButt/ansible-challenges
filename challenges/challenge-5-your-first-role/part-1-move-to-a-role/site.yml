@@ -1,0 +1,6 @@
+---
+# The playbook after the move. It should be short: it only says which hosts get which role.
+- name: Web servers with nginx
+  hosts: web
+  become: true
+  # TODO 6: use the role webserver here. Add a roles: list with one entry.

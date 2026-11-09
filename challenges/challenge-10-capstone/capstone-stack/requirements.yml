@@ -1,0 +1,5 @@
+---
+# TODO: pin the collection to one exact version. The brief (capstone-stack/README.md, "The pin") says which.
+# Add a line "version:" under the name. A range (">=13") or no version is not a pin.
+collections:
+  - name: community.general

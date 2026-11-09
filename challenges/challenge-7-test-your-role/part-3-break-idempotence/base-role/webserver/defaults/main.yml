@@ -1,0 +1,4 @@
+---
+# The port nginx listens on, and the text of the home page.
+webserver_port: 8080
+webserver_message: Hello from Ansible

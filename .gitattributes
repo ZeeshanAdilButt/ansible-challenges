@@ -1,0 +1,5 @@
+# Shell scripts, Dockerfiles and Ansible files are read by Linux containers.
+# A Windows checkout must not turn their line endings into CRLF (that breaks "#!/bin/sh").
+* text=auto eol=lf
+*.png binary
+*.jpg binary

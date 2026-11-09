@@ -1,0 +1,37 @@
+---
+# The safe push. Your job: add the three missing pieces (see the TODO lines), then run it.
+#
+# Run it with (here with a harmless change):
+#   node toolkit/ansible.mjs ansible-playbook -i inventory/rollout.ini challenges/challenge-8-roll-it-out/part-3-lockout-and-rollback/push-safe.yml -e ssh_login_grace_time=30
+- name: Push sshd_config, safe version
+  hosts: all
+  gather_facts: false
+  become: true
+  # TODO 1: run on one host at a time. Add the play keyword "serial" with the value 1 here, at the same level as "become".
+  tasks:
+    - name: Keep a copy of the current sshd_config
+      ansible.builtin.copy:
+        src: /etc/ssh/sshd_config
+        dest: /etc/ssh/sshd_config.before-push
+        remote_src: true
+        mode: preserve
+
+    - name: Install the new sshd_config
+      ansible.builtin.template:
+        src: sshd_config.j2
+        dest: /etc/ssh/sshd_config
+        owner: root
+        group: root
+        mode: "0644"
+        # TODO 2: test the new file before it is installed. Add the module option "validate" here.
+        # Its value is the command sshd -t -f %s (%s stands for a temporary copy of the new file).
+
+    - name: Restart sshd
+      ansible.builtin.service:
+        name: ssh
+        state: restarted
+
+    # TODO 3: prove that a NEW login works now. Add two tasks here:
+    #   - first the module ansible.builtin.meta with the value reset_connection (it drops a connection that is already open),
+    #   - then the module ansible.builtin.wait_for_connection with timeout 10.
+    # If the new login fails, the play stops on this host and the next hosts are left alone.

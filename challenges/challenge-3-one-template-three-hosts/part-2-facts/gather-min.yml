@@ -1,0 +1,17 @@
+---
+# Only the minimal facts: the operating system, the Python, the user, and a few more.
+# Ansible does less work, and you get fewer facts.
+# You do not change this file. The run uses it.
+- name: Gather the minimal facts
+  hosts: all
+  gather_facts: true
+  gather_subset:
+    - min
+  tasks:
+    - name: Count the facts
+      ansible.builtin.debug:
+        msg: "FACT_COUNT={{ ansible_facts | length }}"
+
+    - name: Is the IPv4 fact there?
+      ansible.builtin.debug:
+        msg: "HAS_DEFAULT_IPV4={{ 'default_ipv4' in ansible_facts }}"

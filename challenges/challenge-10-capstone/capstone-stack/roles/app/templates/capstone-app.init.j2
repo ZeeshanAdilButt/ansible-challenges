@@ -1,0 +1,57 @@
+#!/bin/sh
+### BEGIN INIT INFO
+# Provides:          {{ app_service }}
+# Required-Start:    $remote_fs $network
+# Required-Stop:     $remote_fs $network
+# Default-Start:     2 3 4 5
+# Default-Stop:      0 1 6
+# Short-Description: The capstone app
+### END INIT INFO
+# {{ ansible_managed }}
+NAME={{ app_service }}
+APP_USER={{ app_user }}
+APP={{ app_dir }}/app.py
+LOG={{ app_log_dir }}/app.log
+PIDFILE=/run/$NAME.pid
+
+running() {
+  start-stop-daemon --status --pidfile "$PIDFILE"
+}
+
+do_start() {
+  if running; then
+    echo "$NAME is already running"
+    return 0
+  fi
+  start-stop-daemon --start --quiet --background --make-pidfile --pidfile "$PIDFILE" \
+    --chuid "$APP_USER" --startas /bin/sh -- -c "exec /usr/bin/python3 $APP >>$LOG 2>&1"
+  # If the app stops at once (for example a bad setting), say so and fail. Without this, "start" always succeeds.
+  sleep 1
+  if running; then
+    echo "$NAME started"
+    return 0
+  fi
+  echo "$NAME stopped right after it started. Last lines of $LOG:" >&2
+  tail -n 3 "$LOG" >&2
+  return 1
+}
+
+do_stop() {
+  start-stop-daemon --stop --quiet --retry 5 --pidfile "$PIDFILE" --remove-pidfile || true
+  echo "$NAME stopped"
+}
+
+case "$1" in
+  start) do_start ;;
+  stop) do_stop ;;
+  restart | force-reload | reload) do_stop; do_start ;;
+  status)
+    if running; then echo "$NAME is running"; exit 0; fi
+    echo "$NAME is not running"
+    exit 3
+    ;;
+  *)
+    echo "Usage: $0 {start|stop|restart|status}" >&2
+    exit 2
+    ;;
+esac

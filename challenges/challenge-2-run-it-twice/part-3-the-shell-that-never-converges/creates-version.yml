@@ -1,0 +1,20 @@
+---
+# Fix 2: sometimes there is no module, or you must keep a command. Then you tell Ansible
+# when the command has nothing to do, and when it does not change anything.
+#
+# Keep shell and command here. Do not use lineinfile, apt or file.
+
+- name: The same job, still shell and command, made safe to repeat
+  hosts: web
+  become: true
+  tasks:
+    # TODO 1: copy the four tasks of shell-version.yml here, with the same names.
+    #
+    # TODO 2: on the first three tasks add an args: block with creates: <a path>.
+    #         "creates" means: if this path already exists, skip the command and say ok.
+    #           Add a line to the app settings -> creates: /etc/myapp.conf
+    #           Install curl                    -> creates: /usr/bin/curl
+    #           Make the app folder             -> creates: /opt/myapp
+    #
+    # TODO 3: on "Read the app settings" add register: app_settings and changed_when: false.
+    #         The command only reads, so it must never say changed.

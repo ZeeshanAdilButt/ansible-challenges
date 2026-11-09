@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 234" width="640" height="234" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Changes reported per run: check mode finds the drift, the real run repairs it</title>
+  <desc id="d">baseline, second run: 0 changes. drift, check mode: 1 changes. drift, real run: 1 changes. after repair: 0 changes. tasks skipped in check: 2 changes</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Changes reported per run: check mode finds the drift, the real run repairs it</text>
+  <text x="188" y="65" text-anchor="end" font-size="14">baseline, second run</text>
+  <rect x="204" y="51" width="330" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="204" y="51" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">0 changes</text>
+  <text x="188" y="99" text-anchor="end" font-size="14">drift, check mode</text>
+  <rect x="204" y="85" width="330" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="204" y="85" width="165.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">1 changes</text>
+  <text x="188" y="133" text-anchor="end" font-size="14">drift, real run</text>
+  <rect x="204" y="119" width="330" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="204" y="119" width="165.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">1 changes</text>
+  <text x="188" y="167" text-anchor="end" font-size="14">after repair</text>
+  <rect x="204" y="153" width="330" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="204" y="153" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">0 changes</text>
+  <text x="188" y="201" text-anchor="end" font-size="14">tasks skipped in check</text>
+  <rect x="204" y="187" width="330" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="204" y="187" width="330.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="202" font-size="14">2 changes</text>
+</svg>

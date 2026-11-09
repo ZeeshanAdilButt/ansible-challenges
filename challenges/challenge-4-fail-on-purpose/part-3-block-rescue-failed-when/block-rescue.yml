@@ -1,0 +1,17 @@
+---
+# Version 3: handle the error. A block tries, rescue repairs, always runs at the end.
+- name: Read the app version, with block and rescue
+  hosts: all
+  gather_facts: false
+  tasks:
+    # TODO: put the two tasks below in a block:, add a rescue: with two tasks
+    # (write /tmp/needs-deploy with ansible.builtin.copy, then say so with ansible.builtin.debug),
+    # and an always: with one task (write /tmp/last-run with ansible.builtin.copy).
+    - name: Read the app version
+      ansible.builtin.command: cat /srv/app/version
+      register: app_version
+      changed_when: false
+
+    - name: Announce the deploy
+      ansible.builtin.debug:
+        msg: "Deploy finished on {{ inventory_hostname }}"

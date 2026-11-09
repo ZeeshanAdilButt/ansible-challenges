@@ -1,0 +1,12 @@
+---
+# The old config (version 1) on every web host, so that "changed" and "untouched" can be told apart.
+- name: Put the old config on the web hosts
+  hosts: web
+  gather_facts: false
+  tasks:
+    - name: Write the old config
+      ansible.builtin.copy:
+        dest: /etc/anp-app.conf
+        content: "version=1\nworkers=4\n"
+        mode: "0644"
+      become: true

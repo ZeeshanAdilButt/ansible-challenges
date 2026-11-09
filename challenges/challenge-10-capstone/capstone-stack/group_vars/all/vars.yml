@@ -1,0 +1,16 @@
+---
+# Settings shared by the whole fleet. This is release 1, the known-good baseline.
+capstone_release: "1"
+web_port: 80
+app_port: 8080
+db_port: 6379
+web_worker_connections: 1024
+app_log_level: info
+db_maxmemory_mb: 64
+
+# The proxy finds the app, and the app finds the database, by the first host of each group.
+app_host: "{{ groups['app'][0] }}"
+db_host: "{{ groups['db'][0] }}"
+
+# The password lives in vault.yml (encrypted). Everything else reads it through this name.
+db_password: "{{ vault_db_password }}"

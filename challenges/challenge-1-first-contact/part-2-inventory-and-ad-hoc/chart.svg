@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 268" width="640" height="268" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Hosts each pattern selects, and hosts the nginx command changed</title>
+  <desc id="d">all: 3 hosts. web: 2 hosts. all:!db: 2 hosts. web:&amp;db: 0 hosts. nginx, first run: 2 hosts. nginx, second run: 0 hosts</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Hosts each pattern selects, and hosts the nginx command changed</text>
+  <text x="148" y="65" text-anchor="end" font-size="14">all</text>
+  <rect x="164" y="51" width="370" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="164" y="51" width="370.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">3 hosts</text>
+  <text x="148" y="99" text-anchor="end" font-size="14">web</text>
+  <rect x="164" y="85" width="370" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="164" y="85" width="246.7" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">2 hosts</text>
+  <text x="148" y="133" text-anchor="end" font-size="14">all:!db</text>
+  <rect x="164" y="119" width="370" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="164" y="119" width="246.7" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">2 hosts</text>
+  <text x="148" y="167" text-anchor="end" font-size="14">web:&amp;db</text>
+  <rect x="164" y="153" width="370" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="164" y="153" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">0 hosts</text>
+  <text x="148" y="201" text-anchor="end" font-size="14">nginx, first run</text>
+  <rect x="164" y="187" width="370" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="164" y="187" width="246.7" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="202" font-size="14">2 hosts</text>
+  <text x="148" y="235" text-anchor="end" font-size="14">nginx, second run</text>
+  <rect x="164" y="221" width="370" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="164" y="221" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="236" font-size="14">0 hosts</text>
+</svg>

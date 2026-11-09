@@ -1,0 +1,3 @@
+---
+db_conf_path: /etc/redis/redis.conf
+db_service: redis-server

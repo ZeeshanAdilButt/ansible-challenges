@@ -1,0 +1,10 @@
+---
+# Bring the fleet back to the known-good release 1 after a rollout stopped, and prove it.
+# Part 3 of the capstone. Write one or more plays. The test runs this file after it has stopped a rollout halfway.
+#
+# TODO 1: make sure every host answers (ansible.builtin.wait_for_connection, with a timeout).
+# TODO 2: put the known-good release back. site.yml describes release 1 (the settings in group_vars). The host
+#         that the rollout changed before it stopped must go back too, not only the broken one.
+#         ansible.builtin.import_playbook can run site.yml from here.
+# TODO 3: check, through the proxy, that http://127.0.0.1/health answers 200 again (ansible.builtin.uri on the web host,
+#         with retries). Recovery is not done until this check is green.

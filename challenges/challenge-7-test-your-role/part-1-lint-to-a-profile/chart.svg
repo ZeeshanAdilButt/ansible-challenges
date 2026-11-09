@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 302" width="640" height="302" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">ansible-lint findings per profile, and after the fix</title>
+  <desc id="d">min: 0 findings. basic: 16 findings. moderate: 19 findings. safety: 19 findings. shared: 23 findings. production: 33 findings. fixed, production: 0 findings</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">ansible-lint findings per profile, and after the fix</text>
+  <text x="148" y="65" text-anchor="end" font-size="14">min</text>
+  <rect x="164" y="51" width="370" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="164" y="51" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">0 findings</text>
+  <text x="148" y="99" text-anchor="end" font-size="14">basic</text>
+  <rect x="164" y="85" width="370" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="164" y="85" width="179.4" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">16 findings</text>
+  <text x="148" y="133" text-anchor="end" font-size="14">moderate</text>
+  <rect x="164" y="119" width="370" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="164" y="119" width="213.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">19 findings</text>
+  <text x="148" y="167" text-anchor="end" font-size="14">safety</text>
+  <rect x="164" y="153" width="370" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="164" y="153" width="213.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">19 findings</text>
+  <text x="148" y="201" text-anchor="end" font-size="14">shared</text>
+  <rect x="164" y="187" width="370" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="164" y="187" width="257.9" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="202" font-size="14">23 findings</text>
+  <text x="148" y="235" text-anchor="end" font-size="14">production</text>
+  <rect x="164" y="221" width="370" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="164" y="221" width="370.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="236" font-size="14">33 findings</text>
+  <text x="148" y="269" text-anchor="end" font-size="14">fixed, production</text>
+  <rect x="164" y="255" width="370" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="164" y="255" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="270" font-size="14">0 findings</text>
+</svg>

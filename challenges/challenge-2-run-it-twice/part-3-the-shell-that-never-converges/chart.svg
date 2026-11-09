@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 370" width="640" height="370" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Changes per run for three ways to write the same job (both web hosts added up)</title>
+  <desc id="d">shell and command, run 1: 8 changes. shell and command, run 2: 8 changes. shell and command, run 3: 8 changes. modules, run 1: 6 changes. modules, run 2: 0 changes. modules, run 3: 0 changes. creates, run 1: 6 changes. creates, run 2: 0 changes. creates, run 3: 0 changes</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Changes per run for three ways to write the same job (both web hosts added up)</text>
+  <text x="204" y="65" text-anchor="end" font-size="14">shell and command, run 1</text>
+  <rect x="220" y="51" width="314" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="220" y="51" width="314.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">8 changes</text>
+  <text x="204" y="99" text-anchor="end" font-size="14">shell and command, run 2</text>
+  <rect x="220" y="85" width="314" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="220" y="85" width="314.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">8 changes</text>
+  <text x="204" y="133" text-anchor="end" font-size="14">shell and command, run 3</text>
+  <rect x="220" y="119" width="314" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="220" y="119" width="314.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">8 changes</text>
+  <text x="204" y="167" text-anchor="end" font-size="14">modules, run 1</text>
+  <rect x="220" y="153" width="314" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="220" y="153" width="235.5" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">6 changes</text>
+  <text x="204" y="201" text-anchor="end" font-size="14">modules, run 2</text>
+  <rect x="220" y="187" width="314" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="220" y="187" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="202" font-size="14">0 changes</text>
+  <text x="204" y="235" text-anchor="end" font-size="14">modules, run 3</text>
+  <rect x="220" y="221" width="314" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="220" y="221" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="236" font-size="14">0 changes</text>
+  <text x="204" y="269" text-anchor="end" font-size="14">creates, run 1</text>
+  <rect x="220" y="255" width="314" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="220" y="255" width="235.5" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="270" font-size="14">6 changes</text>
+  <text x="204" y="303" text-anchor="end" font-size="14">creates, run 2</text>
+  <rect x="220" y="289" width="314" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="220" y="289" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="304" font-size="14">0 changes</text>
+  <text x="204" y="337" text-anchor="end" font-size="14">creates, run 3</text>
+  <rect x="220" y="323" width="314" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="220" y="323" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="338" font-size="14">0 changes</text>
+</svg>

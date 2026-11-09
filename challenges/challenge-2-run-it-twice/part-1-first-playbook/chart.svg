@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 268" width="640" height="268" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Changes the same playbook made on each host, first run and second run</title>
+  <desc id="d">web1, first run: 3 changes. web2, first run: 3 changes. db1, first run: 2 changes. web1, second run: 0 changes. web2, second run: 0 changes. db1, second run: 0 changes</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Changes the same playbook made on each host, first run and second run</text>
+  <text x="140" y="65" text-anchor="end" font-size="14">web1, first run</text>
+  <rect x="156" y="51" width="378" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="156" y="51" width="378.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">3 changes</text>
+  <text x="140" y="99" text-anchor="end" font-size="14">web2, first run</text>
+  <rect x="156" y="85" width="378" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="156" y="85" width="378.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">3 changes</text>
+  <text x="140" y="133" text-anchor="end" font-size="14">db1, first run</text>
+  <rect x="156" y="119" width="378" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="156" y="119" width="252.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">2 changes</text>
+  <text x="140" y="167" text-anchor="end" font-size="14">web1, second run</text>
+  <rect x="156" y="153" width="378" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="156" y="153" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">0 changes</text>
+  <text x="140" y="201" text-anchor="end" font-size="14">web2, second run</text>
+  <rect x="156" y="187" width="378" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="156" y="187" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="202" font-size="14">0 changes</text>
+  <text x="140" y="235" text-anchor="end" font-size="14">db1, second run</text>
+  <rect x="156" y="221" width="378" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="156" y="221" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="236" font-size="14">0 changes</text>
+</svg>

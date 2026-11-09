@@ -1,0 +1,66 @@
+# The pipeline from challenge 9, part 1, on GitHub.
+#
+# GitHub only reads workflows from .github/workflows at the ROOT of a repository. This copy lives in
+# the part folder so that it can sit next to its test. To use it, copy the folder .github to the root
+# of your own repository.
+#
+# The stage names and their order are the same as in part-1-stages-locally/ci.mjs:
+#   lint, syntax-check, molecule, check-mode, apply, second-run
+#
+# The reference version of this file ran on GitHub on 2026-11-08 and passed (see the README of this part).
+name: ansible
+
+on:
+  push:
+  pull_request:
+
+# The pipeline only reads the repository.
+permissions:
+  contents: read
+
+jobs:
+  pipeline:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    steps:
+      # Actions are pinned by commit (40 characters), not by a tag. A tag can be moved. The comment says which release the commit is.
+      - name: Get the code
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Install Node
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: "22"
+
+      # The control image, built from the pinned Dockerfile and given the name that toolkit/fleet.mjs looks for.
+      - name: Build the pinned control image
+        run: docker build -t anp-control:1 -f challenges/challenge-9-your-pipeline/part-2-the-workflow-file/ci/Dockerfile .
+
+      # The target image is built by the toolkit. The fleet is the three machines that check-mode, apply and second-run use.
+      - name: Start the practice fleet
+        run: node toolkit/fleet.mjs up
+
+      # TODO: the six stage steps below are in the wrong order. Put them in the order of ci.mjs:
+      #   lint, syntax-check, molecule, check-mode, apply, second-run
+      # Move whole steps (the "- name:" line and the "run:" line under it).
+      - name: apply
+        run: node challenges/challenge-9-your-pipeline/part-1-stages-locally/ci.mjs --only apply
+
+      - name: lint
+        run: node challenges/challenge-9-your-pipeline/part-1-stages-locally/ci.mjs --only lint
+
+      - name: syntax-check
+        run: node challenges/challenge-9-your-pipeline/part-1-stages-locally/ci.mjs --only syntax-check
+
+      - name: molecule
+        run: node challenges/challenge-9-your-pipeline/part-1-stages-locally/ci.mjs --only molecule
+
+      - name: check-mode
+        run: node challenges/challenge-9-your-pipeline/part-1-stages-locally/ci.mjs --only check-mode
+
+      - name: second-run
+        run: node challenges/challenge-9-your-pipeline/part-1-stages-locally/ci.mjs --only second-run
+
+      - name: Stop the fleet
+        if: always()
+        run: node toolkit/fleet.mjs down

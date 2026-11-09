@@ -1,0 +1,10 @@
+---
+# The site playbook. The guard comes first.
+- name: The guard
+  ansible.builtin.import_playbook: guard.yml
+
+- name: Put the banner on the web hosts
+  hosts: web
+  become: true
+  roles:
+    - role: banner

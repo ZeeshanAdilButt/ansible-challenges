@@ -1,0 +1,15 @@
+---
+# All facts: the default. Ansible runs the whole setup module on every host
+# before the first task, and then counts what it learned.
+# You do not change this file. The run uses it.
+- name: Gather all facts
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: Count the facts
+      ansible.builtin.debug:
+        msg: "FACT_COUNT={{ ansible_facts | length }}"
+
+    - name: Is the IPv4 fact there?
+      ansible.builtin.debug:
+        msg: "HAS_DEFAULT_IPV4={{ 'default_ipv4' in ansible_facts }}"

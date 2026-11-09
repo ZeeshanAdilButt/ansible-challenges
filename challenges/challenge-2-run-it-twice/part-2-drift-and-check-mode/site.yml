@@ -1,0 +1,47 @@
+---
+# The playbook from part 1, with two tasks for you to add.
+# It sets up nginx on the web hosts and redis on the database host.
+
+- name: Web servers
+  hosts: web
+  become: true
+  tasks:
+    - name: Install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+
+    - name: Write the home page
+      ansible.builtin.copy:
+        content: "Hello from {{ inventory_hostname }}\n"
+        dest: /var/www/html/index.html
+        mode: "0644"
+
+    - name: Start nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+        enabled: true
+
+    # TODO 1: add a task called "Test the nginx configuration" that runs the command: nginx -t
+    #         Use ansible.builtin.command. Add register: nginx_test to keep its output.
+    #         The command only reads, so also add changed_when: false (it must never say changed).
+    #
+    # TODO 2: add a task called "Show the test result" that uses ansible.builtin.debug
+    #         with msg: "{{ nginx_test.stderr_lines }}"
+    #         (nginx prints its test result on stderr, one line per entry in stderr_lines.)
+
+- name: Database server
+  hosts: db
+  become: true
+  tasks:
+    - name: Install redis
+      ansible.builtin.apt:
+        name: redis-server
+        state: present
+
+    - name: Start redis
+      ansible.builtin.service:
+        name: redis-server
+        state: started
+        enabled: true

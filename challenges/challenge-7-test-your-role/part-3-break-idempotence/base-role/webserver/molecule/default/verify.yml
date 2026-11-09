@@ -1,0 +1,40 @@
+---
+# Verify: look at the test machine and assert what must be true.
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Collect the installed packages
+      ansible.builtin.package_facts:
+        manager: auto
+
+    - name: Assert that nginx is installed
+      ansible.builtin.assert:
+        that: "'nginx' in ansible_facts.packages"
+        success_msg: nginx is installed
+        fail_msg: nginx is not installed
+
+    - name: Read the site config
+      ansible.builtin.slurp:
+        src: /etc/nginx/conf.d/webserver.conf
+      register: site_conf
+
+    - name: Assert that the config listens on port 8080
+      ansible.builtin.assert:
+        that: "'listen 8080;' in (site_conf.content | b64decode)"
+        success_msg: the config listens on 8080
+        fail_msg: the config does not say listen 8080
+
+    - name: Ask the web server for the home page
+      ansible.builtin.uri:
+        url: http://127.0.0.1:8080/
+        return_content: true
+      register: home_page
+
+    - name: Assert that the page answers 200 and says hello
+      ansible.builtin.assert:
+        that:
+          - home_page.status == 200
+          - "'Hello from Ansible' in home_page.content"
+        success_msg: the page answers 200 and says hello
+        fail_msg: the page is wrong

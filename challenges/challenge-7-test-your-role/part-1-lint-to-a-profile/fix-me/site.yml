@@ -1,0 +1,20 @@
+---
+# TODO: fix this playbook until ansible-lint passes the profile production (README, step 2).
+# Run:  node toolkit/ansible.mjs ansible-lint --profile production challenges/challenge-7-test-your-role/part-1-lint-to-a-profile/fix-me/site.yml
+- hosts: web
+  tasks:
+    - shell: echo "deploying" > /tmp/deploy.log
+    - apt: name=nginx state=present
+      become: yes
+    - name: copy the config
+      copy: src=nginx.conf dest=/etc/nginx/nginx.conf mode=0644
+      notify: restart nginx
+    - command: systemctl restart nginx
+    - name: Remove old file
+      file: path=/tmp/old state=absent
+      ignore_errors: yes
+    - include_role:
+        name: app
+  handlers:
+    - name: restart nginx
+      service: name=nginx state=restarted

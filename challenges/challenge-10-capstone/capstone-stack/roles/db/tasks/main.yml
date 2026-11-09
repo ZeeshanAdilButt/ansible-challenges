@@ -1,0 +1,14 @@
+---
+# TODO: write the tasks of the db role. The brief (capstone-stack/README.md, "What each role must do") lists them.
+# Give every task a name that starts with a capital letter. Use full module names, for example ansible.builtin.apt.
+#
+# 1. Install the packages redis-server and python3-redis (ansible.builtin.apt).
+# 2. Write /etc/redis/redis.conf from templates/redis.conf.j2 (you write the template too).
+#    The file holds the database password: owner root, group redis, mode "0640", and a diff must never print it.
+#    A change must notify the handler "Apply the new redis settings".
+# 3. Make sure the service redis-server is running and starts at boot (ansible.builtin.service).
+# 4. Run the handlers now (ansible.builtin.meta: flush_handlers), so the check below sees the new settings.
+# 5. Ask the running redis for its settings with community.general.redis_info. It must not report changed,
+#    and its result must not be printed (the task holds the password).
+# 6. Assert that the running maxmemory is db_maxmemory_mb megabytes, in bytes (ansible.builtin.assert).
+#    A value given with -e on the command line is text, so use db_maxmemory_mb | int before you multiply it.

@@ -1,0 +1,16 @@
+---
+# TODO 5: describe the role. Keep the keys below and fill in the values.
+# role_name and namespace give the role its full name, namespace.role_name.
+# Tools such as Molecule (challenge 7) refuse a role without a namespace.
+galaxy_info:
+  role_name: TODO
+  namespace: TODO
+  author: TODO
+  description: TODO
+  license: MIT
+  min_ansible_version: "2.16"
+  platforms:
+    - name: Debian
+      versions:
+        - bookworm
+dependencies: []

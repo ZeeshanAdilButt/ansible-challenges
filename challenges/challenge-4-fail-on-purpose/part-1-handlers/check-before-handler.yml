@@ -1,0 +1,37 @@
+---
+# The handler has not run yet when the check task runs. So nginx still answers with the old config.
+- name: Check nginx before the handler runs
+  hosts: web
+  become: true
+  vars:
+    message: hello
+  tasks:
+    - name: Write the site config
+      ansible.builtin.copy:
+        dest: /etc/nginx/conf.d/demo.conf
+        content: |
+          server {
+              listen 8080;
+              location / {
+                  return 200 "{{ message }} from {{ inventory_hostname }}\n";
+              }
+          }
+        mode: "0644"
+      notify: Reload nginx
+
+    - name: Ask nginx on port 8080
+      ansible.builtin.uri:
+        url: http://localhost:8080
+        return_content: true
+      register: answer
+      changed_when: false
+
+    - name: Show the answer
+      ansible.builtin.debug:
+        msg: "nginx answers: {{ answer.content | trim }}"
+
+  handlers:
+    - name: Reload nginx
+      ansible.builtin.service:
+        name: nginx
+        state: reloaded

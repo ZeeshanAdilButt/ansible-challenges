@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" width="640" height="200" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Seconds for three full molecule test runs</title>
+  <desc id="d">run 1: 166.2 s. run 2: 121 s. run 3: 117.5 s. median: 121 s</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Seconds for three full molecule test runs</text>
+  <text x="80" y="65" text-anchor="end" font-size="14">run 1</text>
+  <rect x="96" y="51" width="438" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="96" y="51" width="438.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">166.2 s</text>
+  <text x="80" y="99" text-anchor="end" font-size="14">run 2</text>
+  <rect x="96" y="85" width="438" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="96" y="85" width="318.9" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">121 s</text>
+  <text x="80" y="133" text-anchor="end" font-size="14">run 3</text>
+  <rect x="96" y="119" width="438" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="96" y="119" width="309.7" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">117.5 s</text>
+  <text x="80" y="167" text-anchor="end" font-size="14">median</text>
+  <rect x="96" y="153" width="438" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="96" y="153" width="318.9" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">121 s</text>
+</svg>

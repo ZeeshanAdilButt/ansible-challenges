@@ -1,0 +1,20 @@
+---
+# One test machine: a Docker container made from the image the course already uses.
+driver:
+  name: docker
+platforms:
+  - name: anp-c7-instance
+    image: python:3.12-slim-bookworm
+    pre_build_image: true
+    labels:
+      anp.challenge: "7"
+provisioner:
+  name: ansible
+  inventory:
+    host_vars:
+      anp-c7-instance:
+        # Talk to the container through the Docker API (the Python docker SDK, which is installed).
+        # The default connection runs the "docker" command, and the Molecule container has no Docker CLI.
+        ansible_connection: community.docker.docker_api
+verifier:
+  name: ansible

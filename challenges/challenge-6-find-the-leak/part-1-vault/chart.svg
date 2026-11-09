@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 234" width="640" height="234" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Hosts changed by the vaulted run, and times the secret shows in the vault file</title>
+  <desc id="d">hosts changed, run 1: 2 count. hosts changed, run 2: 0 count. secret in vault file: 0 count. secret in plain diff: 1 count. secret in vault diff: 0 count</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Hosts changed by the vaulted run, and times the secret shows in the vault file</text>
+  <text x="172" y="65" text-anchor="end" font-size="14">hosts changed, run 1</text>
+  <rect x="188" y="51" width="346" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="188" y="51" width="346.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">2 count</text>
+  <text x="172" y="99" text-anchor="end" font-size="14">hosts changed, run 2</text>
+  <rect x="188" y="85" width="346" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="188" y="85" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">0 count</text>
+  <text x="172" y="133" text-anchor="end" font-size="14">secret in vault file</text>
+  <rect x="188" y="119" width="346" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="188" y="119" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">0 count</text>
+  <text x="172" y="167" text-anchor="end" font-size="14">secret in plain diff</text>
+  <rect x="188" y="153" width="346" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="188" y="153" width="173.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">1 count</text>
+  <text x="172" y="201" text-anchor="end" font-size="14">secret in vault diff</text>
+  <rect x="188" y="187" width="346" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="188" y="187" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="202" font-size="14">0 count</text>
+</svg>

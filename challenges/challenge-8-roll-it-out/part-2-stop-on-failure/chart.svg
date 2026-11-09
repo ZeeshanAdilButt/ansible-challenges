@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 336" width="640" height="336" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Web hosts changed and untouched when web3 fails, by setting</title>
+  <desc id="d">no serial: changed: 5 hosts. no serial: untouched: 0 hosts. serial 2: changed: 5 hosts. serial 2: untouched: 0 hosts. serial 2, max_fail 30: changed: 3 hosts. serial 2, max_fail 30: untouched: 2 hosts. any_errors_fatal: changed: 5 hosts. any_errors_fatal: untouched: 0 hosts</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Web hosts changed and untouched when web3 fails, by setting</text>
+  <text x="240" y="65" text-anchor="end" font-size="14">no serial: changed</text>
+  <rect x="256" y="51" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="51" width="278.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">5 hosts</text>
+  <text x="240" y="99" text-anchor="end" font-size="14">no serial: untouched</text>
+  <rect x="256" y="85" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="85" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">0 hosts</text>
+  <text x="240" y="133" text-anchor="end" font-size="14">serial 2: changed</text>
+  <rect x="256" y="119" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="119" width="278.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">5 hosts</text>
+  <text x="240" y="167" text-anchor="end" font-size="14">serial 2: untouched</text>
+  <rect x="256" y="153" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="153" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">0 hosts</text>
+  <text x="240" y="201" text-anchor="end" font-size="14">serial 2, max_fail 30: changed</text>
+  <rect x="256" y="187" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="187" width="166.8" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="202" font-size="14">3 hosts</text>
+  <text x="240" y="235" text-anchor="end" font-size="14">serial 2, max_fail 30: untouched</text>
+  <rect x="256" y="221" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="221" width="111.2" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="236" font-size="14">2 hosts</text>
+  <text x="240" y="269" text-anchor="end" font-size="14">any_errors_fatal: changed</text>
+  <rect x="256" y="255" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="255" width="278.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="270" font-size="14">5 hosts</text>
+  <text x="240" y="303" text-anchor="end" font-size="14">any_errors_fatal: untouched</text>
+  <rect x="256" y="289" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="289" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="304" font-size="14">0 hosts</text>
+</svg>

@@ -1,0 +1,15 @@
+---
+# Roll release 2 out to the fleet: one host at a time, and stop everything when a host fails.
+# Part 2 of the capstone. The play is almost written. The two TODOs are the two lines that make it safe.
+- name: Roll out release 2
+  hosts: all
+  become: true
+  # TODO 1: change one host at a time. Which play keyword sets the batch size?
+  # TODO 2: say in words that a failed host stops the whole rollout, not only that host. Two keywords can do it:
+  #         any_errors_fatal and max_fail_percentage. Pick one, and be ready to say why. Part 2 runs drills that show
+  #         what each one does with batches of one host and with batches of two.
+  vars_files:
+    - vars/release-2.yml
+  tasks:
+    - name: Roll out this host
+      ansible.builtin.import_tasks: tasks/release.yml

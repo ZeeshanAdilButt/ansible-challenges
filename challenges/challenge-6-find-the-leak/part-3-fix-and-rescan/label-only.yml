@@ -1,0 +1,25 @@
+# loop_control label changes what Ansible prints next to the item. It is for readability.
+# This playbook uses the label and nothing else. Every value here is FAKE.
+- name: Label only
+  hosts: web1
+  become: true
+  vars_files:
+    - vars/secrets.yml
+
+  tasks:
+    - name: Make the config folder
+      ansible.builtin.file:
+        path: /etc/demo-app
+        state: directory
+        mode: "0755"
+
+    - name: Create the service accounts
+      ansible.builtin.copy:
+        dest: "/etc/demo-app/{{ item.name }}.pw"
+        content: "{{ item.password }}\n"
+        mode: "0600"
+      loop:
+        - { name: reporting, password: "{{ db_password }}" }
+        - { name: backup, password: "{{ db_password }}" }
+      loop_control:
+        label: "{{ item.name }}"

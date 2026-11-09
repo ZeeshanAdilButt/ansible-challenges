@@ -1,0 +1,47 @@
+---
+# A fact is something Ansible learns about a host before the first task runs.
+# Ansible runs the setup module for you (the "Gathering Facts" step) and keeps the answers
+# in a dictionary called ansible_facts. You read one value with square brackets:
+#
+#     {{ ansible_facts['distribution'] }}
+#
+# The first two tasks are written for you. The run showed you why: on a new server the
+# network facts are missing, because Ansible needs the ip command to find them. The first task
+# installs it. The second task asks the host for its facts again.
+#
+# This play then prints four facts. Each message has a label, an equals sign and a placeholder.
+# TODO: in each of the four debug tasks, replace the word TODO (inside the double curly braces)
+#       with the right fact:
+#   1. the name of the operating system:      ansible_facts['distribution']
+#   2. the IPv4 address of the main network:  ansible_facts['default_ipv4']['address']
+#   3. the memory in megabytes:               ansible_facts['memtotal_mb']
+#   4. the package manager:                   ansible_facts['pkg_mgr']
+# Keep the labels (DISTRIBUTION=, IPV4=, MEMORY_MB=, PKG_MGR=). The run reads them.
+
+- name: Read facts the new way
+  hosts: all
+  become: true
+  tasks:
+    - name: Install iproute2, the ip command that Ansible uses for network facts
+      ansible.builtin.apt:
+        name: iproute2
+        state: present
+
+    - name: Gather the facts again
+      ansible.builtin.setup:
+
+    - name: Show the distribution
+      ansible.builtin.debug:
+        msg: "DISTRIBUTION={{ TODO }}"
+
+    - name: Show the IPv4 address
+      ansible.builtin.debug:
+        msg: "IPV4={{ TODO }}"
+
+    - name: Show the memory in MB
+      ansible.builtin.debug:
+        msg: "MEMORY_MB={{ TODO }}"
+
+    - name: Show the package manager
+      ansible.builtin.debug:
+        msg: "PKG_MGR={{ TODO }}"

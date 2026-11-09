@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: Zeeshan Adil
+  description: Puts a login banner on a server. Made for the Ansible in Practice course.
+  license: MIT
+  min_ansible_version: "2.16"
+  role_name: banner
+  namespace: acme
+  platforms:
+    - name: Debian
+      versions:
+        - bookworm
+  galaxy_tags: []
+dependencies: []

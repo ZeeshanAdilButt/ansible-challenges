@@ -1,0 +1,14 @@
+---
+# Version 1: no error handling. A failed host drops out of the play.
+- name: Read the app version, plain
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Read the app version
+      ansible.builtin.command: cat /srv/app/version
+      register: app_version
+      changed_when: false
+
+    - name: Announce the deploy
+      ansible.builtin.debug:
+        msg: "Deploy finished on {{ inventory_hostname }}"

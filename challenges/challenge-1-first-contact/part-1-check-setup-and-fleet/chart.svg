@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 132" width="640" height="132" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Size of the two fleet images</title>
+  <desc id="d">control (anp-control:1): 439.4 MB. target (anp-target:1): 236.3 MB</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Size of the two fleet images</text>
+  <text x="196" y="65" text-anchor="end" font-size="14">control (anp-control:1)</text>
+  <rect x="212" y="51" width="322" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="212" y="51" width="322.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">439.4 MB</text>
+  <text x="196" y="99" text-anchor="end" font-size="14">target (anp-target:1)</text>
+  <rect x="212" y="85" width="322" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="212" y="85" width="173.2" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">236.3 MB</text>
+</svg>

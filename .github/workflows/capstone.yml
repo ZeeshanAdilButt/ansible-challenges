@@ -1,0 +1,67 @@
+# The capstone check on a CI runner (challenge 10). It builds the practice fleet, then runs all four parts and the rubric.
+# It runs when you push the tag capstone-1, or when you start it by hand from the Actions tab.
+# Make the tag with:  git tag capstone-1 && git push origin capstone-1
+#
+# One repository secret is needed: CAPSTONE_VAULT_PASSWORD, the password of your group_vars/all/vault.yml
+# (Settings, Secrets and variables, Actions). The workflow writes it to the git-ignored file .vault-pass for this run only.
+name: capstone
+
+on:
+  push:
+    tags:
+      - capstone-1
+  workflow_dispatch:
+    inputs:
+      reference:
+        description: Maintainers only. Lay the reference files over the stack (true) or check your own files (false).
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  capstone:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      ANP_PROJECT: anp-ci
+    steps:
+      - name: Get the repository
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+
+      - name: Set up Node
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: 22
+
+      - name: Write the vault password for this run
+        env:
+          CAPSTONE_VAULT_PASSWORD: ${{ secrets.CAPSTONE_VAULT_PASSWORD }}
+        run: |
+          if [ -z "$CAPSTONE_VAULT_PASSWORD" ]; then
+            echo "The repository secret CAPSTONE_VAULT_PASSWORD is not set." >&2
+            exit 1
+          fi
+          printf '%s\n' "$CAPSTONE_VAULT_PASSWORD" > challenges/challenge-10-capstone/capstone-stack/.vault-pass
+          chmod 600 challenges/challenge-10-capstone/capstone-stack/.vault-pass
+
+      - name: Build the practice fleet
+        run: node toolkit/fleet.mjs up
+
+      - name: Run the capstone check
+        run: node challenges/challenge-10-capstone/tools/capstone-check.mjs ${{ inputs.reference && '--reference' || '' }}
+
+      - name: Keep the numbers
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: capstone-facts
+          path: facts.json
+          if-no-files-found: ignore
+
+      - name: Remove the fleet
+        if: always()
+        run: node toolkit/fleet.mjs down

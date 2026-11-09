@@ -1,0 +1,61 @@
+---
+# How long does it take to gather facts? This file times the setup module itself,
+# five calls in a row on each host, so that the cost of starting Ansible does not hide it.
+# Three plays: all facts, only the minimal facts (gather_subset: min), and a ping for comparison.
+# You do not change this file. The run uses it.
+
+- name: All facts
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Start the clock
+      ansible.builtin.set_fact:
+        clock_start: "{{ now(utc=true).timestamp() }}"
+
+    - name: Gather all facts, five times
+      ansible.builtin.setup:
+      loop: [1, 2, 3, 4, 5]
+      loop_control:
+        label: "call {{ item }}"
+
+    - name: Report the average
+      ansible.builtin.debug:
+        msg: "FULL_S={{ ((now(utc=true).timestamp() - clock_start | float) / 5) | round(3) }}"
+
+- name: Minimal facts
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Start the clock
+      ansible.builtin.set_fact:
+        clock_start: "{{ now(utc=true).timestamp() }}"
+
+    - name: Gather the minimal facts, five times
+      ansible.builtin.setup:
+        gather_subset:
+          - min
+      loop: [1, 2, 3, 4, 5]
+      loop_control:
+        label: "call {{ item }}"
+
+    - name: Report the average
+      ansible.builtin.debug:
+        msg: "MIN_S={{ ((now(utc=true).timestamp() - clock_start | float) / 5) | round(3) }}"
+
+- name: Ping, no facts
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Start the clock
+      ansible.builtin.set_fact:
+        clock_start: "{{ now(utc=true).timestamp() }}"
+
+    - name: Ping, five times
+      ansible.builtin.ping:
+      loop: [1, 2, 3, 4, 5]
+      loop_control:
+        label: "call {{ item }}"
+
+    - name: Report the average
+      ansible.builtin.debug:
+        msg: "PING_S={{ ((now(utc=true).timestamp() - clock_start | float) / 5) | round(3) }}"

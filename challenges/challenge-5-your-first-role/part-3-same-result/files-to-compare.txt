@@ -1,0 +1,3 @@
+# The files that the playbook writes on the web hosts. One path per line.
+# TODO: read before.yml in part 1 and list every file it writes (look for dest:). There are two.
+# Lines that start with # are ignored.

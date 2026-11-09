@@ -1,0 +1,28 @@
+---
+# One config push to the six web hosts. Three settings are variables, so run.mjs can try them one at a time:
+#   batch     the value of serial                (not set: no serial)
+#   max_fail  the value of max_fail_percentage   (not set: the Ansible default)
+#   fatal     the value of any_errors_fatal      (not set: false)
+# Example:  -e batch=2 -e max_fail=30
+- name: Push app config version 2
+  hosts: web
+  gather_facts: false
+  serial: "{{ batch | default(omit) }}"
+  max_fail_percentage: "{{ max_fail | default(omit) }}"
+  any_errors_fatal: "{{ fatal | default(false) }}"
+  tasks:
+    - name: Write the new config (checked before it replaces the old file)
+      ansible.builtin.copy:
+        dest: /etc/anp-app.conf
+        content: |
+          version=2
+          workers={{ app_workers | default(4) }}
+        mode: "0644"
+        # validate runs this command on a temporary copy first. %s is the temporary file.
+        # If the command fails, the real file is not touched and the task fails.
+        validate: grep -Eq '^workers=[1-9][0-9]*$' %s
+      become: true
+
+    - name: Restart the app (simulated, it takes one second)
+      ansible.builtin.command: sleep 1
+      changed_when: false

@@ -1,0 +1,22 @@
+---
+# The job: on the web hosts, put one line in /etc/myapp.conf, install curl, make the
+# folder /opt/myapp, and read the settings file.
+#
+# This version is written with shell and command. It is the version many people write first.
+# You do not change this file. You run it three times and watch the recap.
+
+- name: The same job, written with shell and command
+  hosts: web
+  become: true
+  tasks:
+    - name: Add a line to the app settings
+      ansible.builtin.shell: echo "app_mode=production" >> /etc/myapp.conf
+
+    - name: Install curl
+      ansible.builtin.shell: apt-get install -y curl
+
+    - name: Make the app folder
+      ansible.builtin.command: mkdir -p /opt/myapp
+
+    - name: Read the app settings
+      ansible.builtin.command: cat /etc/myapp.conf

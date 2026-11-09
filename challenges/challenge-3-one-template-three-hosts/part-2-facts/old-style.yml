@@ -1,0 +1,15 @@
+---
+# The old way to read a fact: a plain variable that starts with "ansible_".
+# It still works today, and Ansible warns you that it will stop working.
+# You do not change this file. The run uses it.
+
+- name: Read facts the old way
+  hosts: all
+  tasks:
+    - name: Show the distribution with the old name
+      ansible.builtin.debug:
+        msg: "OLD DISTRIBUTION={{ ansible_distribution }}"
+
+    - name: Show the package manager with the old name
+      ansible.builtin.debug:
+        msg: "OLD PKG_MGR={{ ansible_pkg_mgr }}"

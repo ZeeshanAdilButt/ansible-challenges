@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: Zeeshan Adil
+  description: A small Python HTTP service for the capstone, started by an init script.
+  license: MIT
+  min_ansible_version: "2.19"
+  role_name: app
+  namespace: capstone
+  platforms:
+    - name: Debian
+      versions:
+        - bookworm
+  galaxy_tags: []
+dependencies: []

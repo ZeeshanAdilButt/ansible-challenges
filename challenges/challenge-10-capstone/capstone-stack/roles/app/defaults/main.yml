@@ -1,0 +1,7 @@
+---
+app_user: capstone
+app_dir: /opt/capstone-app
+app_conf_dir: /etc/capstone-app
+app_conf_path: "{{ app_conf_dir }}/app.conf"
+app_log_dir: /var/log/capstone-app
+app_service: capstone-app

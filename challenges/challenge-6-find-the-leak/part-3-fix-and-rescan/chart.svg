@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 234" width="640" height="234" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Lines that show the secret, before and after the fix</title>
+  <desc id="d">before the fix: 12 lines. after the fix: 0 lines. error text, no_log on: 2 lines. ANSIBLE_DEBUG=1, no_log on: 3 lines. old secret in git history: 2 lines</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Lines that show the secret, before and after the fix</text>
+  <text x="220" y="65" text-anchor="end" font-size="14">before the fix</text>
+  <rect x="236" y="51" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="51" width="298.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">12 lines</text>
+  <text x="220" y="99" text-anchor="end" font-size="14">after the fix</text>
+  <rect x="236" y="85" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="85" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">0 lines</text>
+  <text x="220" y="133" text-anchor="end" font-size="14">error text, no_log on</text>
+  <rect x="236" y="119" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="119" width="49.7" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">2 lines</text>
+  <text x="220" y="167" text-anchor="end" font-size="14">ANSIBLE_DEBUG=1, no_log on</text>
+  <rect x="236" y="153" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="153" width="74.5" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">3 lines</text>
+  <text x="220" y="201" text-anchor="end" font-size="14">old secret in git history</text>
+  <rect x="236" y="187" width="298" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="236" y="187" width="49.7" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="202" font-size="14">2 lines</text>
+</svg>

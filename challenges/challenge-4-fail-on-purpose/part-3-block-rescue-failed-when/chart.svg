@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 336" width="640" height="336" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Failed hosts and hosts that reached the last task, per version</title>
+  <desc id="d">plain: failed: 1 hosts. plain: reached last task: 2 hosts. ignore_errors: failed: 0 hosts. ignore_errors: reached last task: 3 hosts. rescue: failed: 0 hosts. rescue: reached last task: 2 hosts. failed_when: failed: 2 hosts. failed_when: reached last task: 1 hosts</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Failed hosts and hosts that reached the last task, per version</text>
+  <text x="240" y="65" text-anchor="end" font-size="14">plain: failed</text>
+  <rect x="256" y="51" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="51" width="92.7" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">1 hosts</text>
+  <text x="240" y="99" text-anchor="end" font-size="14">plain: reached last task</text>
+  <rect x="256" y="85" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="85" width="185.3" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">2 hosts</text>
+  <text x="240" y="133" text-anchor="end" font-size="14">ignore_errors: failed</text>
+  <rect x="256" y="119" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="119" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">0 hosts</text>
+  <text x="240" y="167" text-anchor="end" font-size="14">ignore_errors: reached last task</text>
+  <rect x="256" y="153" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="153" width="278.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">3 hosts</text>
+  <text x="240" y="201" text-anchor="end" font-size="14">rescue: failed</text>
+  <rect x="256" y="187" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="187" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="202" font-size="14">0 hosts</text>
+  <text x="240" y="235" text-anchor="end" font-size="14">rescue: reached last task</text>
+  <rect x="256" y="221" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="221" width="185.3" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="236" font-size="14">2 hosts</text>
+  <text x="240" y="269" text-anchor="end" font-size="14">failed_when: failed</text>
+  <rect x="256" y="255" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="255" width="185.3" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="270" font-size="14">2 hosts</text>
+  <text x="240" y="303" text-anchor="end" font-size="14">failed_when: reached last task</text>
+  <rect x="256" y="289" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="289" width="92.7" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="304" font-size="14">1 hosts</text>
+</svg>

@@ -1,0 +1,43 @@
+---
+# The playbook as it is today: everything in one file.
+# It is correct, but it can only be reused by copying it.
+- name: Web servers with nginx
+  hosts: web
+  become: true
+  vars:
+    site_port: 8080
+  tasks:
+    - name: Install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+
+    - name: Make the web root
+      ansible.builtin.file:
+        path: /var/www/site
+        state: directory
+        mode: "0755"
+
+    - name: Write the index page
+      ansible.builtin.copy:
+        dest: /var/www/site/index.html
+        content: "Welcome to {{ inventory_hostname }}\n"
+        mode: "0644"
+
+    - name: Write the nginx site config
+      ansible.builtin.template:
+        src: site.conf.j2
+        dest: /etc/nginx/conf.d/site.conf
+        mode: "0644"
+      notify: Reload nginx
+
+    - name: Start nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+
+  handlers:
+    - name: Reload nginx
+      ansible.builtin.service:
+        name: nginx
+        state: reloaded

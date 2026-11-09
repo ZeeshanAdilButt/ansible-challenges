@@ -1,0 +1,3 @@
+---
+# TODO: a role that others use says who made it. Add galaxy_info (author, namespace, role_name, description, license, min_ansible_version, platforms, galaxy_tags).
+dependencies: []

@@ -1,0 +1,21 @@
+---
+# One scenario, one throwaway container. Molecule starts it, runs the role, checks it, removes it.
+driver:
+  name: docker
+platforms:
+  - name: anp-c9-instance
+    image: python:3.12-slim-bookworm
+    pre_build_image: true
+    # The label lets "node toolkit/cleanup.mjs 9" find the container if a run is stopped half way.
+    labels:
+      anp.challenge: "9"
+provisioner:
+  name: ansible
+  inventory:
+    host_vars:
+      anp-c9-instance:
+        # The default connection runs the "docker" program, which the Molecule container does not have.
+        # This one talks to the Docker socket directly.
+        ansible_connection: community.docker.docker_api
+verifier:
+  name: ansible

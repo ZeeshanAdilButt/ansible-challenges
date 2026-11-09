@@ -1,0 +1,14 @@
+# Managed by Ansible. Changes made by hand on the host will be overwritten.
+Include /etc/ssh/sshd_config.d/*.conf
+{% if ssh_allow_users | default('') %}
+AllowUsers {{ ssh_allow_users }}
+{% endif %}
+LoginGraceTime {{ ssh_login_grace_time | default(120) }}
+UsePAM yes
+X11Forwarding no
+PrintMotd no
+AcceptEnv LANG LC_*
+Subsystem	sftp	/usr/lib/openssh/sftp-server
+{% if ssh_extra_line | default('') %}
+{{ ssh_extra_line }}
+{% endif %}

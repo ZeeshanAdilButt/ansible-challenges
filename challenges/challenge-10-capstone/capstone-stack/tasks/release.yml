@@ -1,0 +1,9 @@
+---
+# What a rollout does on ONE host: apply the role that has the same name as the host's group.
+# web1 is in the group web, so it gets the role web. The role ends with its own health check.
+- name: Apply the role of this host
+  ansible.builtin.include_role:
+    name: "{{ group_name }}"
+  loop: "{{ group_names }}"
+  loop_control:
+    loop_var: group_name # not "item": the roles have loops of their own

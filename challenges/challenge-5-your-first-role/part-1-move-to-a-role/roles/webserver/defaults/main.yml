@@ -1,0 +1,3 @@
+---
+# TODO 3: move the variable site_port here, with its value 8080.
+# Defaults are the weakest place for a variable, so anyone who uses the role can override them.

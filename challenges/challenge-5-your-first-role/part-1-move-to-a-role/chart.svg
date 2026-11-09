@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 166" width="640" height="166" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Lines of code in the playbook, before and after the move</title>
+  <desc id="d">before.yml: 35 lines. site.yml (after): 5 lines. tasks moved into the role: 5 lines</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Lines of code in the playbook, before and after the move</text>
+  <text x="212" y="65" text-anchor="end" font-size="14">before.yml</text>
+  <rect x="228" y="51" width="306" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="228" y="51" width="306.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">35 lines</text>
+  <text x="212" y="99" text-anchor="end" font-size="14">site.yml (after)</text>
+  <rect x="228" y="85" width="306" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="228" y="85" width="43.7" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">5 lines</text>
+  <text x="212" y="133" text-anchor="end" font-size="14">tasks moved into the role</text>
+  <rect x="228" y="119" width="306" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="228" y="119" width="43.7" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">5 lines</text>
+</svg>

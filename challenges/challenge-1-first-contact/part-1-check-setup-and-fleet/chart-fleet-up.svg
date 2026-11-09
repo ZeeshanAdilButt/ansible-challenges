@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 166" width="640" height="166" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Seconds from nothing to a fleet that answers SSH</title>
+  <desc id="d">try 1: 7.2 s. try 2: 14.9 s. try 3: 7.7 s</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Seconds from nothing to a fleet that answers SSH</text>
+  <text x="80" y="65" text-anchor="end" font-size="14">try 1</text>
+  <rect x="96" y="51" width="438" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="96" y="51" width="211.7" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">7.2 s</text>
+  <text x="80" y="99" text-anchor="end" font-size="14">try 2</text>
+  <rect x="96" y="85" width="438" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="96" y="85" width="438.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">14.9 s</text>
+  <text x="80" y="133" text-anchor="end" font-size="14">try 3</text>
+  <rect x="96" y="119" width="438" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="96" y="119" width="226.3" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">7.7 s</text>
+</svg>

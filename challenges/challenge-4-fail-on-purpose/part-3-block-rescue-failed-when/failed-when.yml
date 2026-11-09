@@ -1,0 +1,15 @@
+---
+# Version 4: you decide what "failed" means. The command can succeed and still be wrong.
+- name: Read the app version, failing on the wrong output
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Read the app version
+      ansible.builtin.command: cat /srv/app/version
+      register: app_version
+      changed_when: false
+      # TODO: fail this task when the output does not contain 2.4.1 (one line: failed_when).
+
+    - name: Announce the deploy
+      ansible.builtin.debug:
+        msg: "Deploy finished on {{ inventory_hostname }}"

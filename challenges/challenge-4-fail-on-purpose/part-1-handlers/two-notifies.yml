@@ -1,0 +1,32 @@
+---
+- name: Two tasks, one handler
+  hosts: web
+  become: true
+  tasks:
+    - name: Write the first config file
+      ansible.builtin.copy:
+        dest: /etc/nginx/conf.d/first.conf
+        content: |
+          server {
+              listen 8081;
+              location / { return 200 "first\n"; }
+          }
+        mode: "0644"
+      notify: Reload nginx
+
+    - name: Write the second config file
+      ansible.builtin.copy:
+        dest: /etc/nginx/conf.d/second.conf
+        content: |
+          server {
+              listen 8082;
+              location / { return 200 "second\n"; }
+          }
+        mode: "0644"
+      notify: Reload nginx
+
+  handlers:
+    - name: Reload nginx
+      ansible.builtin.service:
+        name: nginx
+        state: reloaded

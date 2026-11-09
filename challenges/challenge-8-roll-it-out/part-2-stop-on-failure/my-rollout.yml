@@ -1,0 +1,27 @@
+---
+# Your rollout. It must push the new config to six hosts, and stop early when a host fails.
+# web3 fails the config check (see rollout-with-bad-web3.ini). Hosts web1 to web6 are in batches in this order.
+#
+# Run it with:
+#   node toolkit/ansible.mjs ansible-playbook -i challenges/challenge-8-roll-it-out/part-2-stop-on-failure/rollout-with-bad-web3.ini challenges/challenge-8-roll-it-out/part-2-stop-on-failure/my-rollout.yml
+- name: Push app config version 2, carefully
+  hosts: web
+  gather_facts: false
+  # TODO: add two keywords here.
+  #   1. serial, with the number 2: two hosts at a time.
+  #   2. max_fail_percentage, with a number that stops the play when one host of a batch of two fails.
+  #      Careful: the failed share must be MORE than this number to stop the play. Read the note in the README.
+  tasks:
+    - name: Write the new config (checked before it replaces the old file)
+      ansible.builtin.copy:
+        dest: /etc/anp-app.conf
+        content: |
+          version=2
+          workers={{ app_workers | default(4) }}
+        mode: "0644"
+        validate: grep -Eq '^workers=[1-9][0-9]*$' %s
+      become: true
+
+    - name: Restart the app (simulated, it takes one second)
+      ansible.builtin.command: sleep 1
+      changed_when: false

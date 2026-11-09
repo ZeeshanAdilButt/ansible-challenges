@@ -1,0 +1,5 @@
+# TODO: write the nginx config. The brief (capstone-stack/README.md, web step 2) lists what it needs.
+# Start the file with a comment that says Ansible wrote it: {{ ansible_managed }}
+# Settings come from group_vars/all/vars.yml: web_worker_connections, web_port, app_host, app_port, capstone_release.
+# Hints: the file needs the blocks "events" and "http" (with "include /etc/nginx/mime.types;"), and "server" inside http.
+# "pid /run/nginx.pid;" and "user www-data;" go at the top, where Debian's nginx expects them.

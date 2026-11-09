@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 302" width="640" height="302" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">How many times the handler ran (summed over web1 and web2)</title>
+  <desc id="d">first run: 2 runs. second run: 0 runs. config change only: 2 runs. two notifies: 2 runs. web2 fails: 1 runs. rerun after failure: 0 runs. web2 fails, forced: 2 runs</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">How many times the handler ran (summed over web1 and web2)</text>
+  <text x="164" y="65" text-anchor="end" font-size="14">first run</text>
+  <rect x="180" y="51" width="354" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="180" y="51" width="354.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">2 runs</text>
+  <text x="164" y="99" text-anchor="end" font-size="14">second run</text>
+  <rect x="180" y="85" width="354" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="180" y="85" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">0 runs</text>
+  <text x="164" y="133" text-anchor="end" font-size="14">config change only</text>
+  <rect x="180" y="119" width="354" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="180" y="119" width="354.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">2 runs</text>
+  <text x="164" y="167" text-anchor="end" font-size="14">two notifies</text>
+  <rect x="180" y="153" width="354" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="180" y="153" width="354.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">2 runs</text>
+  <text x="164" y="201" text-anchor="end" font-size="14">web2 fails</text>
+  <rect x="180" y="187" width="354" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="180" y="187" width="177.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="202" font-size="14">1 runs</text>
+  <text x="164" y="235" text-anchor="end" font-size="14">rerun after failure</text>
+  <rect x="180" y="221" width="354" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="180" y="221" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="236" font-size="14">0 runs</text>
+  <text x="164" y="269" text-anchor="end" font-size="14">web2 fails, forced</text>
+  <rect x="180" y="255" width="354" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="180" y="255" width="354.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="270" font-size="14">2 runs</text>
+</svg>

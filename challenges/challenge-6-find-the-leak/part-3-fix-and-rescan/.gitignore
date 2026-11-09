@@ -1,0 +1,5 @@
+# Made by run.mjs on your machine. They hold the throwaway vault password's work.
+vars/secrets.yml
+scratch-repo/
+leaky-output.txt
+fixed-output.txt

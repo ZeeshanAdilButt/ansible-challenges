@@ -1,0 +1,7 @@
+---
+# What this project needs from Ansible Galaxy.
+# TODO: pin the collection ansible.posix to the exact version 2.1.0.
+# Add one line under the name: version: "2.1.0"
+# With no version line, Galaxy gives you the newest one, and it can change under you.
+collections:
+  - name: ansible.posix

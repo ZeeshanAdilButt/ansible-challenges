@@ -1,0 +1,47 @@
+# A playbook that leaks its secret on purpose. Every value here is FAKE.
+# The password is in the vault (vars/secrets.yml). The vault protects the file on disk.
+# It does not protect what the playbook does with the value afterwards.
+- name: Deploy the demo app
+  hosts: web
+  become: true
+  vars_files:
+    - vars/secrets.yml
+
+  tasks:
+    - name: Show the database password
+      ansible.builtin.debug:
+        var: db_password
+
+    - name: Make the config folder
+      ansible.builtin.file:
+        path: /etc/demo-app
+        state: directory
+        mode: "0755"
+
+    - name: Write the app config
+      ansible.builtin.copy:
+        dest: /etc/demo-app/app.conf
+        content: |
+          DB_HOST=db1
+          DB_PASSWORD={{ db_password }}
+        mode: "0600"
+
+    - name: Create the service accounts
+      ansible.builtin.copy:
+        dest: "/etc/demo-app/{{ item.name }}.pw"
+        content: "{{ item.password }}\n"
+        mode: "0600"
+      loop:
+        - { name: reporting, password: "{{ db_password }}" }
+        - { name: backup, password: "{{ db_password }}" }
+
+    - name: Read the config back
+      ansible.builtin.command: cat /etc/demo-app/app.conf
+      register: config_check
+      changed_when: false
+
+    - name: Start the report job
+      ansible.builtin.shell: "sleep 120; echo run-report --password {{ db_password }} > /dev/null"
+      async: 180
+      poll: 0
+      changed_when: true

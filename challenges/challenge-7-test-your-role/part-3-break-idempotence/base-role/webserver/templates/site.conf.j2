@@ -1,0 +1,10 @@
+# Managed by Ansible. Changes made by hand are lost.
+server {
+    listen {{ webserver_port }};
+    server_name _;
+    root /var/www/html;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}

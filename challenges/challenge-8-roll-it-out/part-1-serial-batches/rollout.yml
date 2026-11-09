@@ -1,0 +1,21 @@
+---
+# Challenge 8, part 1: change the app config on six web servers, a few at a time.
+#
+# Run it with:
+#   node toolkit/ansible.mjs ansible-playbook -i inventory/rollout.ini challenges/challenge-8-roll-it-out/part-1-serial-batches/rollout.yml
+- name: Roll out app config version 2
+  hosts: web
+  gather_facts: false
+  # TODO: add one line here, the keyword "serial:", with a list of batch sizes.
+  # The first batch must hold 1 host, the second 2 hosts and the third 3 hosts.
+  tasks:
+    - name: Write the new app config
+      ansible.builtin.copy:
+        dest: /etc/anp-app.conf
+        content: "version=2\n"
+        mode: "0644"
+      become: true
+
+    - name: Restart the app (simulated, it takes two seconds)
+      ansible.builtin.command: sleep 2
+      changed_when: false

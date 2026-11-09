@@ -1,0 +1,18 @@
+---
+# Fix 1: do the same job with modules. A module checks the state first and changes
+# something only when the state is different. So it says changed once, then ok.
+#
+# The job is the same as in shell-version.yml, but there is no "read the settings" task:
+# a module does not need to read a file to know what is in it.
+
+- name: The same job, written with modules
+  hosts: web
+  become: true
+  tasks:
+    # TODO 1: "Add a line to the app settings" with ansible.builtin.lineinfile.
+    #         path: /etc/myapp.conf   line: app_mode=production   create: true   mode: "0644"
+    #
+    # TODO 2: "Install curl" with ansible.builtin.apt (name: curl, state: present).
+    #
+    # TODO 3: "Make the app folder" with ansible.builtin.file
+    #         (path: /opt/myapp, state: directory, mode: "0755").

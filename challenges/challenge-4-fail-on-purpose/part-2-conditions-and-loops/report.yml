@@ -1,0 +1,16 @@
+---
+# Asks every host which of our packages and users it has. Read only: it changes nothing.
+- name: Report packages and users
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Read the package list
+      ansible.builtin.package_facts:
+
+    - name: Read the user list
+      ansible.builtin.getent:
+        database: passwd
+
+    - name: Show what this host has
+      ansible.builtin.debug:
+        msg: "packages: {{ ['nginx', 'sqlite3', 'tree', 'jq'] | select('in', ansible_facts['packages']) | sort | list }}, users: {{ ['alice', 'bob', 'carol'] | select('in', getent_passwd) | sort | list }}"

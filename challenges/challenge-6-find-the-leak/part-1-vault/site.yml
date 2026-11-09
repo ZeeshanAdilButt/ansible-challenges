@@ -1,0 +1,22 @@
+# Writes the (fake) database password into a config file on the web hosts.
+# The password comes from vars/secrets.yml. That file must be a vault.
+- name: Deploy the demo app config
+  hosts: web
+  become: true
+  vars_files:
+    - vars/secrets.yml
+
+  tasks:
+    - name: Make the config folder
+      ansible.builtin.file:
+        path: /etc/demo-app
+        state: directory
+        mode: "0755"
+
+    - name: Write the app config
+      ansible.builtin.copy:
+        dest: /etc/demo-app/app.conf
+        content: |
+          DB_HOST=db1
+          DB_PASSWORD={{ db_password }}
+        mode: "0600"

@@ -1,0 +1,10 @@
+---
+# What happens when you ask for a fact that the host could not report?
+# You do not change this file. The run uses it on new servers.
+
+- name: Ask for the IPv4 address
+  hosts: web1
+  tasks:
+    - name: Show the IPv4 address
+      ansible.builtin.debug:
+        msg: "IPV4={{ ansible_facts['default_ipv4']['address'] }}"

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" width="640" height="200" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">What the pipeline files hold: hosts, stages, pinned actions</title>
+  <desc id="d">hosts from hosts.txt: 3. hosts from other-hosts.txt: 4. stage steps in the workflow: 6. actions pinned by commit: 2</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">What the pipeline files hold: hosts, stages, pinned actions</text>
+  <text x="228" y="65" text-anchor="end" font-size="14">hosts from hosts.txt</text>
+  <rect x="244" y="51" width="290" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="244" y="51" width="145.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">3</text>
+  <text x="228" y="99" text-anchor="end" font-size="14">hosts from other-hosts.txt</text>
+  <rect x="244" y="85" width="290" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="244" y="85" width="193.3" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">4</text>
+  <text x="228" y="133" text-anchor="end" font-size="14">stage steps in the workflow</text>
+  <rect x="244" y="119" width="290" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="244" y="119" width="290.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">6</text>
+  <text x="228" y="167" text-anchor="end" font-size="14">actions pinned by commit</text>
+  <rect x="244" y="153" width="290" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="244" y="153" width="96.7" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">2</text>
+</svg>

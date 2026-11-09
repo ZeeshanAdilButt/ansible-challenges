@@ -1,0 +1,9 @@
+---
+# Converge: run the role on the test machine.
+- name: Converge
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: Run the role
+      ansible.builtin.include_role:
+        name: acme.webserver

@@ -1,0 +1,15 @@
+---
+# Uses one module from the collection ansible.posix. It writes a kernel setting into a file only:
+# sysctl_set: false and reload: false mean it does not touch the running kernel.
+- name: Use a module from a collection
+  hosts: web
+  become: true
+  tasks:
+    - name: Write a sysctl setting into a file
+      ansible.posix.sysctl:
+        name: vm.swappiness
+        value: "10"
+        sysctl_file: /etc/sysctl.d/90-demo.conf
+        sysctl_set: false
+        reload: false
+        state: present

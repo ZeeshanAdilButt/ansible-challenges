@@ -1,0 +1,16 @@
+---
+- name: Make the folder for banners
+  ansible.builtin.file:
+    path: /etc/banner.d
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: Write the login banner
+  ansible.builtin.template:
+    src: banner.txt.j2
+    dest: /etc/banner.d/welcome.txt
+    owner: root
+    group: root
+    mode: "0644"

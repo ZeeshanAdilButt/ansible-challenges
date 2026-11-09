@@ -1,0 +1,15 @@
+{
+  "name": "ansible-challenges",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Challenges for the course Ansible in Practice. No dependencies.",
+  "type": "module",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "check": "node toolkit/check-setup.mjs",
+    "fleet:up": "node toolkit/fleet.mjs up",
+    "fleet:down": "node toolkit/fleet.mjs down",
+    "test": "node --test --test-concurrency=1 \"toolkit/test.mjs\" \"tools/test.mjs\" \"challenges/**/test.mjs\"",
+    "test:challenge1": "node --test --test-concurrency=1 \"challenges/challenge-1-first-contact/**/test.mjs\""
+  }
+}

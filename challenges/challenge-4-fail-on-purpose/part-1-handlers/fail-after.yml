@@ -1,0 +1,30 @@
+---
+- name: A failure after the notify
+  hosts: web
+  become: true
+  vars:
+    message: hello
+  tasks:
+    - name: Write the site config
+      ansible.builtin.copy:
+        dest: /etc/nginx/conf.d/demo.conf
+        content: |
+          server {
+              listen 8080;
+              location / {
+                  return 200 "{{ message }} from {{ inventory_hostname }}\n";
+              }
+          }
+        mode: "0644"
+      notify: Reload nginx
+
+    - name: A task that breaks on web2
+      ansible.builtin.fail:
+        msg: "Planned failure on web2"
+      when: inventory_hostname == "web2"
+
+  handlers:
+    - name: Reload nginx
+      ansible.builtin.service:
+        name: nginx
+        state: reloaded

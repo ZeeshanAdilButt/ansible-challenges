@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: Zeeshan Adil
+  description: Redis for the capstone, with a password and a memory limit.
+  license: MIT
+  min_ansible_version: "2.19"
+  role_name: db
+  namespace: capstone
+  platforms:
+    - name: Debian
+      versions:
+        - bookworm
+  galaxy_tags: []
+dependencies: []

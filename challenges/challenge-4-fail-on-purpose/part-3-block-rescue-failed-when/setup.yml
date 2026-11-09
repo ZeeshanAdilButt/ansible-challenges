@@ -1,0 +1,23 @@
+---
+# Gives the two web hosts a file that holds the app version. db1 gets nothing on purpose:
+# a task that reads the file will fail on db1 only.
+- name: Put the app version on the web hosts
+  hosts: web
+  gather_facts: false
+  become: true
+  vars:
+    versions:
+      web1: "2.4.1"
+      web2: "2.4.0"
+  tasks:
+    - name: Make the app folder
+      ansible.builtin.file:
+        path: /srv/app
+        state: directory
+        mode: "0755"
+
+    - name: Write the version file
+      ansible.builtin.copy:
+        dest: /srv/app/version
+        content: "{{ versions[inventory_hostname] }}\n"
+        mode: "0644"

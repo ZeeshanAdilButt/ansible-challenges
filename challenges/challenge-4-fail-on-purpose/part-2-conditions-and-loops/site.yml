@@ -1,0 +1,68 @@
+---
+# Your playbook. It works, but it does only part of the job.
+# Do the four TODOs, then run run.mjs.
+- name: Loops and conditions on all hosts
+  hosts: all
+  become: true
+  vars:
+    common_packages:
+      - tree
+      - jq
+    users:
+      - name: alice
+        shell: /bin/bash
+      - name: bob
+        shell: /bin/bash
+      - name: carol
+        shell: /bin/sh
+  tasks:
+    # TODO 1: install every package in common_packages, not only tree.
+    # Use loop: "{{ common_packages }}" and name: "{{ item }}".
+    - name: Install the common packages
+      ansible.builtin.apt:
+        name: tree
+        state: present
+
+    # TODO 2: create every user in users, not only alice.
+    # Use loop: "{{ users }}", name: "{{ item.name }}", shell: "{{ item.shell }}".
+    # Add loop_control with label: "{{ item.name }}" so the output prints a short name.
+    - name: Create the users
+      ansible.builtin.user:
+        name: alice
+        shell: /bin/bash
+
+    # TODO 3: run this task only on hosts in the group web, and the next one only on hosts in the group db.
+    # Use: when: "'web' in group_names"
+    - name: Install nginx on web hosts
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+
+    - name: Install sqlite3 on database hosts
+      ansible.builtin.apt:
+        name: sqlite3
+        state: present
+
+    # This one is done for you: a condition on a fact. Debian is not Red Hat, so every host skips it.
+    - name: Use dnf on Red Hat family systems
+      ansible.builtin.debug:
+        msg: "This host would use dnf."
+      when: ansible_facts['os_family'] == "RedHat"
+
+- name: Wait for a slow service on the web hosts
+  hosts: web
+  become: true
+  tasks:
+    # This task fakes a slow service: nginx starts 7 seconds from now, in the background.
+    - name: Start nginx late, in the background
+      ansible.builtin.command: sh -c "sleep 7 && service nginx start"
+      async: 60
+      poll: 0
+      changed_when: true
+
+    # TODO 4: nginx is not up yet when this task first runs, so it fails.
+    # Ask Ansible to try again: add until: nginx_answer.status == 200, retries: 10 and delay: 2.
+    - name: Wait until nginx answers
+      ansible.builtin.uri:
+        url: http://localhost
+      register: nginx_answer

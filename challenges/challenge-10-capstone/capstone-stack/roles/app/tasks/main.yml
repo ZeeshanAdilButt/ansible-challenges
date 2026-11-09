@@ -1,0 +1,15 @@
+---
+# TODO: write the tasks of the app role. The brief (capstone-stack/README.md, "What each role must do") lists them.
+# Give every task a name that starts with a capital letter. Use full module names, for example ansible.builtin.user.
+#
+# 1. A system user app_user: shell /usr/sbin/nologin, no home (ansible.builtin.user).
+# 2. Three folders (ansible.builtin.file with a loop): app_dir (owner root), app_conf_dir (owner root, group app_user,
+#    mode "0750") and app_log_dir (owner and group app_user, mode "0750"). Keep the loop readable: loop_control with a label.
+# 3. The app code: templates/app.py.j2 to app_dir/app.py, owner root, mode "0644". A change must notify "Restart the app".
+# 4. The app settings: templates/app.conf.j2 to app_conf_path, owner root, group app_user, mode "0640".
+#    The file holds the database password, so a diff must never print it. A change must notify "Restart the app".
+# 5. The init script: templates/capstone-app.init.j2 to /etc/init.d/<app_service>, owner root, mode "0755".
+# 6. The service app_service is running and starts at boot (ansible.builtin.service).
+# 7. Run the handlers now (ansible.builtin.meta: flush_handlers).
+# 8. Check that http://127.0.0.1:<app_port>/health answers 200 (ansible.builtin.uri). Up to 8 tries, 1 second apart.
+#    A check never changes anything, so it must not report changed.

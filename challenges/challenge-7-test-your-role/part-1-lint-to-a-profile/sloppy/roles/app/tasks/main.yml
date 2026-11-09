@@ -1,0 +1,8 @@
+---
+- name: install curl
+  apt: name=curl
+  become: yes
+- debug: msg="app installed"
+- name: Run migrations
+  command: /usr/local/bin/migrate
+  when: ansible_os_family == "Debian"

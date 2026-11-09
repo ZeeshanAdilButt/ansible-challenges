@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 166" width="640" height="166" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Seconds to install the pinned collection (three installs)</title>
+  <desc id="d">install 1: 114.5 s. install 2: 94.6 s. install 3: 59.6 s</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Seconds to install the pinned collection (three installs)</text>
+  <text x="84" y="65" text-anchor="end" font-size="14">install 1</text>
+  <rect x="100" y="51" width="434" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="100" y="51" width="434.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">114.5 s</text>
+  <text x="84" y="99" text-anchor="end" font-size="14">install 2</text>
+  <rect x="100" y="85" width="434" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="100" y="85" width="358.6" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">94.6 s</text>
+  <text x="84" y="133" text-anchor="end" font-size="14">install 3</text>
+  <rect x="100" y="119" width="434" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="100" y="119" width="225.9" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">59.6 s</text>
+</svg>

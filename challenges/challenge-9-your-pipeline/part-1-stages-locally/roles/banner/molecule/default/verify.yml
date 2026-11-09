@@ -1,0 +1,15 @@
+---
+- name: Verify
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Read the banner
+      ansible.builtin.slurp:
+        src: /etc/banner.d/welcome.txt
+      register: banner
+
+    - name: The banner names the host and the team
+      ansible.builtin.assert:
+        that:
+          - "'Welcome to anp-c9-instance.' in (banner.content | b64decode)"
+          - "'Team: platform.' in (banner.content | b64decode)"

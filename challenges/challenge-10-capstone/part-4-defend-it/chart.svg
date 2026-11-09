@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 268" width="640" height="268" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Automated rubric points earned by area (of the points available)</title>
+  <desc id="d">fleet configured (of 15): 15 points. idempotence and tests (of 14): 14 points. secrets (of 8): 8 points. rollout safety (of 11): 11 points. recovery (of 10): 10 points. evidence and communication (of 12): 12 points</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Automated rubric points earned by area (of the points available)</text>
+  <text x="240" y="65" text-anchor="end" font-size="14">fleet configured (of 15)</text>
+  <rect x="256" y="51" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="51" width="278.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">15 points</text>
+  <text x="240" y="99" text-anchor="end" font-size="14">idempotence and tests (of 14)</text>
+  <rect x="256" y="85" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="85" width="259.5" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">14 points</text>
+  <text x="240" y="133" text-anchor="end" font-size="14">secrets (of 8)</text>
+  <rect x="256" y="119" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="119" width="148.3" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">8 points</text>
+  <text x="240" y="167" text-anchor="end" font-size="14">rollout safety (of 11)</text>
+  <rect x="256" y="153" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="153" width="203.9" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">11 points</text>
+  <text x="240" y="201" text-anchor="end" font-size="14">recovery (of 10)</text>
+  <rect x="256" y="187" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="187" width="185.3" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="202" font-size="14">10 points</text>
+  <text x="240" y="235" text-anchor="end" font-size="14">evidence and communication (of 12)</text>
+  <rect x="256" y="221" width="278" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="256" y="221" width="222.4" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="236" font-size="14">12 points</text>
+</svg>

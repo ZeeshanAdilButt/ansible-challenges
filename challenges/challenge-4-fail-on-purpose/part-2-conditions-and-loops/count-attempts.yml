@@ -1,0 +1,19 @@
+---
+# How many times does a task really run when you say retries: 3?
+# The check below can never pass, so every try fails. It counts its own runs in a file on the host.
+- name: Count the real attempts
+  hosts: web1
+  gather_facts: false
+  tasks:
+    - name: Reset the counter
+      ansible.builtin.file:
+        path: /tmp/attempts
+        state: absent
+
+    - name: A check that never passes
+      ansible.builtin.shell: n=$(cat /tmp/attempts 2>/dev/null || echo 0); echo $((n + 1)) > /tmp/attempts; false
+      register: never_ready
+      until: never_ready.rc == 0
+      retries: 3
+      delay: 0
+      changed_when: false

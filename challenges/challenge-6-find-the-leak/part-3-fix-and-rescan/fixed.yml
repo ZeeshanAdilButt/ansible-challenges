@@ -1,0 +1,52 @@
+# Your fixed copy of leaky.yml. Every value here is FAKE.
+# It still leaks in four places. Fix each TODO, then run run.mjs.
+- name: Deploy the demo app
+  hosts: web
+  become: true
+  vars_files:
+    - vars/secrets.yml
+
+  tasks:
+    # TODO 1: this task prints the secret to everyone who reads the run. Remove it.
+    - name: Show the database password
+      ansible.builtin.debug:
+        var: db_password
+
+    - name: Make the config folder
+      ansible.builtin.file:
+        path: /etc/demo-app
+        state: directory
+        mode: "0755"
+
+    - name: Write the app config
+      ansible.builtin.copy:
+        dest: /etc/demo-app/app.conf
+        content: |
+          DB_HOST=db1
+          DB_PASSWORD={{ db_password }}
+        mode: "0600"
+
+    # TODO 2: the loop prints each item, and each item holds the password.
+    # Hide the result (no_log) and give the loop a short label (loop_control).
+    - name: Create the service accounts
+      ansible.builtin.copy:
+        dest: "/etc/demo-app/{{ item.name }}.pw"
+        content: "{{ item.password }}\n"
+        mode: "0600"
+      loop:
+        - { name: reporting, password: "{{ db_password }}" }
+        - { name: backup, password: "{{ db_password }}" }
+
+    # TODO 3: with -v this task prints the file it read, password included. Hide it.
+    - name: Read the config back
+      ansible.builtin.command: cat /etc/demo-app/app.conf
+      register: config_check
+      changed_when: false
+
+    # TODO 4: the password is on the command line, and every user can see it with ps.
+    # Pass it in an environment variable instead (environment: with the variable) and read "$DB_PASSWORD" in the command.
+    - name: Start the report job
+      ansible.builtin.shell: "sleep 120; echo run-report --password {{ db_password }} > /dev/null"
+      async: 180
+      poll: 0
+      changed_when: true

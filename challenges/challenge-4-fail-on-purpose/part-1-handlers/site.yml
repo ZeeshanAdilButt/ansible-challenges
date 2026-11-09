@@ -1,0 +1,35 @@
+---
+# Your playbook. It installs nginx, starts it and writes a site config.
+# Right now a changed config does nothing: nginx keeps the old config until someone reloads it.
+# Your job: make a changed config reload nginx, and only then.
+- name: Web servers with nginx
+  hosts: web
+  become: true
+  vars:
+    message: hello
+  tasks:
+    - name: Install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+
+    - name: Start nginx
+      ansible.builtin.service:
+        name: nginx
+        state: started
+
+    - name: Write the site config
+      ansible.builtin.copy:
+        dest: /etc/nginx/conf.d/demo.conf
+        content: |
+          server {
+              listen 8080;
+              location / {
+                  return 200 "{{ message }} from {{ inventory_hostname }}\n";
+              }
+          }
+        mode: "0644"
+      # TODO 1: make this task call a handler named "Reload nginx" when it changes the file (use notify).
+
+  # TODO 2: add a handlers section with one handler named "Reload nginx".
+  # It must reload nginx with ansible.builtin.service (state: reloaded).

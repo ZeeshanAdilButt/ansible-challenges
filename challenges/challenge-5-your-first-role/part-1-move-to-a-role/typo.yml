@@ -1,0 +1,7 @@
+---
+# A playbook with a typo in the role name. It fails on purpose.
+- name: Web servers with nginx
+  hosts: web
+  become: true
+  roles:
+    - webservr

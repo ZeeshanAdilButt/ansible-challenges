@@ -1,0 +1,8 @@
+# Your hunt. Run run.mjs once, then look through leaky-output.txt, the process list and the git history.
+# For each place, write how many LINES show the secret demo-secret-not-real-0001.
+# TODO: put a number after each equals sign. run.mjs checks them against the scanner.
+debug=
+loop=
+registered=
+process_list=
+git_history=

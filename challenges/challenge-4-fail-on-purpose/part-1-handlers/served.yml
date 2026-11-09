@@ -1,0 +1,15 @@
+---
+- name: Ask nginx what it answers right now
+  hosts: web
+  gather_facts: false
+  tasks:
+    - name: Ask nginx on port 8080
+      ansible.builtin.uri:
+        url: http://localhost:8080
+        return_content: true
+      register: answer
+      changed_when: false
+
+    - name: Show the answer
+      ansible.builtin.debug:
+        msg: "nginx answers: {{ answer.content | trim }}"

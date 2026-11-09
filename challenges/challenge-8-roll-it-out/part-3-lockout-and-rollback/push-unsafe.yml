@@ -1,0 +1,31 @@
+---
+# The unsafe push: copy a new sshd_config to every host and restart sshd. Nothing checks anything.
+# This is the playbook that causes the lockout. Do not use it on a real server.
+#
+# Variables you can set with -e:
+#   ssh_allow_users=deploy       adds the line "AllowUsers deploy" (the practice key belongs to the user ansible, so it is refused)
+#   ssh_login_grace_time=30      a harmless change
+- name: Push sshd_config, unsafe version
+  hosts: all
+  gather_facts: false
+  become: true
+  tasks:
+    - name: Keep a copy of the current sshd_config
+      ansible.builtin.copy:
+        src: /etc/ssh/sshd_config
+        dest: /etc/ssh/sshd_config.before-push
+        remote_src: true
+        mode: preserve
+
+    - name: Install the new sshd_config
+      ansible.builtin.template:
+        src: sshd_config.j2
+        dest: /etc/ssh/sshd_config
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Restart sshd
+      ansible.builtin.service:
+        name: ssh
+        state: restarted

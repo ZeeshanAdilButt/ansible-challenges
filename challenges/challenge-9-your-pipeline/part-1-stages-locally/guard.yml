@@ -1,0 +1,23 @@
+---
+# The guard. It runs first, on the control machine only (connection: local), so it can stop a run
+# BEFORE Ansible opens a single SSH connection to a host.
+#
+# Your job: write the condition (see the TODO). It must pass for the practice inventory
+# and refuse any other.
+#
+# Note: do not name your variable "environment". That is an Ansible keyword, and Ansible
+# ignores a variable with that name. The inventories here use deploy_environment.
+- name: Guard, stop unless this is the practice environment
+  hosts: all
+  connection: local
+  gather_facts: false
+  run_once: true
+  tasks:
+    - name: Check the environment
+      ansible.builtin.assert:
+        # TODO: replace "false" with a test: deploy_environment must equal "practice".
+        # If the variable is not set at all, the guard must refuse too (use the default filter).
+        that:
+          - false
+        fail_msg: "Refusing to run. deploy_environment is '{{ deploy_environment | default('not set') }}', not 'practice'."
+        success_msg: "Environment is practice. Go on."

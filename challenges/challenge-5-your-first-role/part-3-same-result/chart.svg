@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 200" width="640" height="200" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Changed tasks per run: playbook, role, and second runs</title>
+  <desc id="d">playbook, first run: 12 changed. role, first run: 12 changed. playbook, second run: 0 changed. role, second run: 0 changed</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Changed tasks per run: playbook, role, and second runs</text>
+  <text x="172" y="65" text-anchor="end" font-size="14">playbook, first run</text>
+  <rect x="188" y="51" width="346" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="188" y="51" width="346.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">12 changed</text>
+  <text x="172" y="99" text-anchor="end" font-size="14">role, first run</text>
+  <rect x="188" y="85" width="346" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="188" y="85" width="346.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">12 changed</text>
+  <text x="172" y="133" text-anchor="end" font-size="14">playbook, second run</text>
+  <rect x="188" y="119" width="346" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="188" y="119" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">0 changed</text>
+  <text x="172" y="167" text-anchor="end" font-size="14">role, second run</text>
+  <rect x="188" y="153" width="346" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="188" y="153" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">0 changed</text>
+</svg>

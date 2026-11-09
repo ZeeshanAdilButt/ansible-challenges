@@ -1,0 +1,30 @@
+---
+# Your first playbook. A playbook is a list of plays. A play says which hosts to use
+# and what tasks to run on them, in order. Each task calls one module.
+#
+# Read it top to bottom. The first task is written for you. The TODO lines are yours.
+
+- name: Web servers
+  hosts: web
+  become: true # run every task here with sudo
+  tasks:
+    - name: Install nginx
+      ansible.builtin.apt:
+        name: nginx
+        state: present
+
+    # TODO 1: write the home page. Use ansible.builtin.copy with these options:
+    #           content: a line of text that names the host, for example "Hello from {{ inventory_hostname }}\n"
+    #           dest: /var/www/html/index.html
+    #           mode: "0644"
+    #         Give the task a name that says what it does.
+
+    # TODO 2: start nginx. Use ansible.builtin.service with name: nginx, state: started, enabled: true.
+    #         (Debian does not start a service when you install it here, so you must start it.)
+
+- name: Database server
+  hosts: db
+  become: true
+  tasks:
+    # TODO 3: install the package redis-server (ansible.builtin.apt, state: present).
+    # TODO 4: start the service redis-server (ansible.builtin.service, state: started, enabled: true).

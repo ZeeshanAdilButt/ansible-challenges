@@ -1,0 +1,14 @@
+---
+galaxy_info:
+  author: course
+  namespace: acme
+  role_name: webserver
+  description: Installs nginx and serves one page on a chosen port.
+  license: MIT
+  min_ansible_version: "2.16"
+  platforms:
+    - name: Debian
+      versions:
+        - bookworm
+  galaxy_tags: []
+dependencies: []

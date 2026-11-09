@@ -1,0 +1,13 @@
+# Your guess. Six places can set the variable app_port. When two of them set it, one wins.
+# Put the six names below in the order you think Ansible uses, one name per line.
+# The place that LOSES against all the others goes first. The place that WINS goes last.
+# Lines that start with # are ignored.
+#
+#   role-defaults    app_port in the defaults folder of a role
+#   group_vars-all   app_port in group_vars/all.yml, next to the playbook
+#   group_vars-web   app_port in group_vars/web.yml, next to the playbook (web is a group)
+#   host_vars-web2   app_port in host_vars/web2.yml, next to the playbook (web2 is one host)
+#   play-vars        app_port under vars: in the play
+#   extra-vars       app_port=... on the command line with -e
+#
+# TODO: write the six names here, weakest first.

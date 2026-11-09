@@ -1,0 +1,5 @@
+---
+# TODO: one handler, named exactly "Apply the new redis settings".
+# Do not restart redis (see the brief, db step 4). Set maxmemory while redis runs: the module community.general.redis
+# with command: config, name: maxmemory and value: "<db_maxmemory_mb>mb". It logs in with login_password.
+# The task holds the password, so its result must not be printed.

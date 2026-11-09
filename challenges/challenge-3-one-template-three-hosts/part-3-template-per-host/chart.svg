@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 268" width="640" height="268" role="img" aria-labelledby="t d" font-family="system-ui, sans-serif" fill="currentColor">
+  <title id="t">Lines in the config file that one template made on each host, and changes per run</title>
+  <desc id="d">lines on web1: 7. lines on web2: 7. lines on db1: 5. changes, first run: 6. changes, second run: 0. changes, port on web1: 1</desc>
+  <text x="0" y="24" font-size="17" font-weight="600">Lines in the config file that one template made on each host, and changes per run</text>
+  <text x="180" y="65" text-anchor="end" font-size="14">lines on web1</text>
+  <rect x="196" y="51" width="338" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="196" y="51" width="338.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="66" font-size="14">7</text>
+  <text x="180" y="99" text-anchor="end" font-size="14">lines on web2</text>
+  <rect x="196" y="85" width="338" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="196" y="85" width="338.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="100" font-size="14">7</text>
+  <text x="180" y="133" text-anchor="end" font-size="14">lines on db1</text>
+  <rect x="196" y="119" width="338" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="196" y="119" width="241.4" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="134" font-size="14">5</text>
+  <text x="180" y="167" text-anchor="end" font-size="14">changes, first run</text>
+  <rect x="196" y="153" width="338" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="196" y="153" width="289.7" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="168" font-size="14">6</text>
+  <text x="180" y="201" text-anchor="end" font-size="14">changes, second run</text>
+  <rect x="196" y="187" width="338" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="196" y="187" width="0.0" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="202" font-size="14">0</text>
+  <text x="180" y="235" text-anchor="end" font-size="14">changes, port on web1</text>
+  <rect x="196" y="221" width="338" height="20" rx="3" fill="currentColor" fill-opacity="0.08"/>
+  <rect x="196" y="221" width="48.3" height="20" rx="3" fill="currentColor" fill-opacity="0.7"/>
+  <text x="544" y="236" font-size="14">1</text>
+</svg>

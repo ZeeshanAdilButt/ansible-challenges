@@ -1,0 +1,39 @@
+# What no_log hides, and what it does not. Every value here is FAKE.
+- name: Try no_log
+  hosts: web1
+  become: true
+  vars_files:
+    - vars/secrets.yml
+
+  tasks:
+    - name: Make the config folder
+      ansible.builtin.file:
+        path: /etc/demo-app
+        state: directory
+        mode: "0755"
+
+    - name: Write a file without no_log
+      ansible.builtin.copy:
+        dest: /etc/demo-app/plain.conf
+        content: "DB_PASSWORD={{ db_password }}\n"
+        mode: "0600"
+
+    - name: Write a file with no_log
+      ansible.builtin.copy:
+        dest: /etc/demo-app/hidden.conf
+        content: "DB_PASSWORD={{ db_password }}\n"
+        mode: "0600"
+      no_log: true
+
+    - name: Run a command that has the secret in it
+      ansible.builtin.command: "echo {{ db_password }}"
+      no_log: true
+      changed_when: false
+
+    - name: Fail with the secret in the error text
+      ansible.builtin.copy:
+        src: "/nonexistent/{{ db_password }}"
+        dest: /tmp/never-written
+      no_log: true
+      ignore_errors: true
+      tags: [error-text]

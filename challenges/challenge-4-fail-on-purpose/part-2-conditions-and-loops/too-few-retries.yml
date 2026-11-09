@@ -1,0 +1,24 @@
+---
+# The same wait, with too few tries. It fails on purpose.
+- name: Wait for a slow service, with too few retries
+  hosts: web
+  become: true
+  tasks:
+    - name: Stop nginx
+      ansible.builtin.service:
+        name: nginx
+        state: stopped
+
+    - name: Start nginx late, in the background
+      ansible.builtin.command: sh -c "sleep 25 && service nginx start"
+      async: 60
+      poll: 0
+      changed_when: true
+
+    - name: Wait until nginx answers
+      ansible.builtin.uri:
+        url: http://localhost
+      register: nginx_answer
+      until: nginx_answer.status == 200
+      retries: 3
+      delay: 1

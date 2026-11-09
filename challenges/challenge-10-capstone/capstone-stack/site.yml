@@ -1,0 +1,19 @@
+---
+# The whole fleet, in the order the pieces need each other: database, then app, then proxy.
+- name: Database host
+  hosts: db
+  become: true
+  roles:
+    - db
+
+- name: App host
+  hosts: app
+  become: true
+  roles:
+    - app
+
+- name: Proxy host
+  hosts: web
+  become: true
+  roles:
+    - web

@@ -1,0 +1,13 @@
+# Practice SSH key made by the toolkit. Never commit it.
+keys/
+# Vault password files (challenge 6). Never commit them.
+.vault-pass
+# Collections installed with ansible-galaxy (challenge 5).
+collections/
+# facts.json is kept in the reference repository only; the starter maker leaves it out.
+node_modules/
+*.log
+*.tmp
+.DS_Store
+# The scratch copy of capstone-stack with the reference files laid over it (challenge 10 maintainer runs).
+capstone-stack-reference/
